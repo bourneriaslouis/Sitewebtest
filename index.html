@@ -3,31 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votre Succession : Anticipez l'Avenir - Maître Gibert</title>
+    <title>Urgence Succession : Protégez votre patrimoine - Guide Complet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- DESIGN JURIDIQUE PREMIUM & DYNAMIQUE --- */
+        /* --- DESIGN SYSTEM DYNAMIQUE & URGENT --- */
         :root {
-            --primary: #0f172a;   /* Bleu nuit très sombre (Luxe/Sérieux) */
-            --secondary: #334155; /* Gris bleuté */
-            --accent: #d97706;    /* Doré Ambré (Urgence/Action) */
-            --bg-light: #f1f5f9;
+            --primary-dark: #0A1128; /* Bleu nuit très profond (Autorité) */
+            --primary-light: #1c2a4f; /* Bleu légèrement plus clair pour le contraste */
+            --accent-gold: #FF8C00;   /* Orange/Or vif (Urgence et Action) */
+            --accent-alert: #d32f2f;  /* Rouge pour les avertissements critiques */
+            --text-light: #f1f5f9;    /* Texte clair */
+            --text-dark: #334155;     /* Texte sombre */
             --white: #ffffff;
+            --section-bg-alt: #f8fafc; /* Fond alternatif pour casser la monotonie */
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--secondary);
-            line-height: 1.7;
-            overflow-x: hidden; /* Évite le scroll horizontal */
+            font-family: 'Poppins', sans-serif; /* Police moderne et lisible */
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', 'Georgia', serif; color: var(--primary); margin-top: 0; }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif; /* Police élégante pour les titres */
+            color: var(--primary-dark);
+            margin-top: 0;
+            line-height: 1.3;
+        }
 
-        /* --- NAVIGATION --- */
+        strong { color: var(--primary-dark); font-weight: 800; }
+        .accent-text { color: var(--accent-gold); }
+
+        /* --- NAVIGATION FLOTTANTE --- */
         nav {
-            background-color: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 17, 40, 0.95); /* Fond sombre semi-transparent */
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             position: sticky;
@@ -36,299 +50,367 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
+            border-bottom: 3px solid var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        .nav-logo { font-weight: 800; font-size: 1.3rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; }
-        .nav-links a { text-decoration: none; color: var(--secondary); margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; text-transform: uppercase; color: var(--white); letter-spacing: 1px; }
+        .nav-logo span { color: var(--accent-gold); }
+        
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--accent-gold); }
+        /* Petit trait sous les liens au survol */
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+            background-color: var(--accent-gold); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
 
-        /* --- HERO HEADER (PARTIE DYNAMIQUE) --- */
+        /* --- HERO HEADER (L'URGENCE) --- */
         header {
             position: relative;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80');
+            /* Image de fond sombre et dramatique */
+            background: linear-gradient(rgba(10, 17, 40, 0.85), rgba(10, 17, 40, 0.95)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
-            background-attachment: fixed; /* Effet Parallaxe */
             background-position: center;
-            height: 90vh; /* Prend presque tout l'écran */
+            min-height: 85vh; /* Prend presque tout l'écran */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            padding: 0 1rem;
+            color: var(--white);
+            padding: 2rem;
         }
 
-        .hero-content {
-            max-width: 900px;
-            animation: slideUp 1s ease-out; /* Animation d'entrée */
-        }
+        .hero-content { max-width: 900px; animation: fadeInUp 1s ease-out; }
 
         header h1 {
-            color: white;
-            font-size: 3.5rem;
+            color: var(--white);
+            font-size: 4rem;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        header p {
-            font-size: 1.3rem;
-            color: #cbd5e1;
+        header p.lead {
+            font-size: 1.5rem;
+            color: #e2e8f0;
             margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 400;
         }
 
-        /* BOUTON D'ACTION PRINCIPAL */
-        .btn-main {
-            background-color: var(--accent);
-            color: white;
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            font-weight: bold;
+        /* BOUTON PULSANT */
+        .btn-urgent {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 1.2rem 3.5rem;
+            font-size: 1.2rem;
+            font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
             display: inline-block;
-            animation: pulse 2s infinite; /* Le bouton "respire" */
-            border: 2px solid transparent;
+            animation: pulse 2s infinite;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
+        .btn-urgent:hover { transform: translateY(-5px) scale(1.05); background-color: #ff9f33; box-shadow: 0 10px 40px rgba(255, 140, 0, 0.8); }
 
-        .btn-main:hover {
-            transform: translateY(-3px) scale(1.05);
-            background-color: #b45309;
-            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.6);
-        }
+        /* --- SECTIONS COMMUNES --- */
+        section { padding: 6rem 1.5rem; position: relative; }
+        /* Alternance de fonds pour le dynamisme */
+        section:nth-child(odd) { background-color: var(--white); }
+        section:nth-child(even) { background-color: var(--section-bg-alt); }
 
-        /* --- SECTIONS --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        section { margin-bottom: 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 3rem; margin-bottom: 1rem; }
+        /* Trait décoratif sous les titres */
+        .section-header .separator { height: 4px; width: 100px; background: var(--accent-gold); margin: 0 auto; border-radius: 2px;}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .section-title .line { width: 80px; height: 4px; background: var(--accent); margin: 0 auto; border-radius: 2px; }
-
-        /* CARTES AVEC EFFET HOVER */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 5px solid transparent;
-            cursor: pointer; /* Indique qu'on peut interagir */
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-top-color: var(--accent);
-        }
-
-        .card-icon { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent); }
-
-        /* TABLEAU STYLISÉ */
-        .table-container {
-            overflow-x: auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        /* --- ÉLÉMENTS DE DESIGN SPECIFIQUES --- */
+        
+        /* Alert Box (pour les dangers) */
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 5px solid var(--accent-alert);
             padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
         }
-        table { width: 100%; border-collapse: collapse; }
-        th { text-align: left; padding: 1rem; background: #f8fafc; color: var(--primary); }
-        td { padding: 1rem; border-bottom: 1px solid #e2e8f0; }
+        .alert-icon { font-size: 3rem; color: var(--accent-alert); line-height: 1; }
 
-        /* ANIMATIONS CSS */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
+        /* Solution Box (pour les outils) */
+        .solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .solution-card {
+            background: var(--white); padding: 3rem 2rem; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            border-top: 5px solid var(--primary-light);
+        }
+        .solution-card:hover { transform: translateY(-10px); border-top-color: var(--accent-gold); }
+        .solution-icon { font-size: 4rem; margin-bottom: 1.5rem; color: var(--accent-gold); display: block; }
+
+        /* Tableaux Fiscalité */
+        .tax-table-container { overflow-x: auto; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: var(--white); }
+        th { background: var(--primary-dark); color: var(--white); padding: 1.2rem; text-align: left; }
+        td { padding: 1.2rem; border-bottom: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        .highlight-row { background-color: #fffbeb !important; font-weight: bold; color: var(--primary-dark); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .footer-warning {
+            max-width: 800px; margin: 0 auto 3rem; padding: 2rem;
+            border: 2px dashed rgba(255, 140, 0, 0.3); border-radius: 8px;
+            font-size: 0.95rem; background: rgba(255,255,255,0.05);
+        }
+
+        /* --- ANIMATIONS CSS --- */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 140, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(217, 119, 6, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
-        }
+        /* Classe JavaScript pour l'animation au scroll */
+        .animate-on-scroll { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .animate-on-scroll.active { opacity: 1; transform: translateY(0); }
 
-        /* Classe pour le scroll reveal (Javascript) */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .btn-main { padding: 1rem 2rem; font-size: 1rem; }
-            .nav-links { display: none; }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            header h1 { font-size: 2.8rem; }
+            header p.lead { font-size: 1.2rem; }
+            .nav-links { display: none; } /* Menu burger à prévoir pour plus tard */
+            .nav-logo { font-size: 1.2rem; }
+            section h2 { font-size: 2.2rem; }
+            .alert-box { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="nav-logo">Maître Gibert</div>
+        <div class="nav-logo">SUCCESSION <span>URGENCE</span></div>
         <div class="nav-links">
-            <a href="#droits">Mes Droits</a>
-            <a href="#outils">Solutions</a>
-            <a href="#fiscalite">Impôts</a>
-            <a href="mailto:danc@free.fr" style="color:var(--accent); border: 2px solid var(--accent); padding: 5px 15px; border-radius: 20px;">Contact</a>
+            <a href="#intro">Introduction</a>
+            <a href="#notions">1. Les Règles</a>
+            <a href="#danger">2. Le Danger</a>
+            <a href="#solutions">3. Les Solutions</a>
+            <a href="#fiscalite">4. Le Coût</a>
         </div>
     </nav>
 
     <header>
         <div class="hero-content">
-            <h1>Ne laissez pas le hasard<br>décider pour votre famille.</h1>
-            <p>Sans testament ni anticipation, c'est le Code Civil qui répartit vos biens, souvent contre votre volonté. Prenez le contrôle de votre succession dès aujourd'hui.</p>
-            
-            <a href="#droits" class="btn-main">Connaître mes droits</a>
+            <h1>N'attendez pas qu'il soit<br><span class="accent-text">trop tard.</span></h1>
+            <p class="lead">Ne rien faire, c'est laisser le Code Civil décider à votre place. Et ce qu'il décide n'est probablement pas ce que vous souhaitez pour votre famille.</p>
+            <a href="#danger" class="btn-urgent">VOIR LES RISQUES IMMÉDIATS</a>
         </div>
     </header>
 
-    <div class="container" id="droits">
-        <section class="reveal">
-            <div class="section-title">
-                <h2>Votre situation actuelle</h2>
-                <div class="line"></div>
-                <p style="margin-top:1rem;">Cliquez sur votre situation pour comprendre l'urgence.</p>
-            </div>
-
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Je suis marié(e)</h3>
-                    <p>Attention : Sans disposition particulière, votre conjoint n'hérite pas de tout. Si vous avez des enfants, ses droits sont limités. Protégez-le avec une "Donation au dernier vivant".</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🤝</div>
-                    <h3>Je suis Pacsé(e) / Concubin</h3>
-                    <p><strong>Urgence absolue :</strong> Aux yeux de la succession, vous êtes des étrangers. Sans testament, votre partenaire n'aura RIEN et paiera 60% de taxes s'il reçoit quelque chose.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🏠</div>
-                    <h3>J'ai une famille recomposée</h3>
-                    <p>La situation la plus complexe. Comment protéger le nouveau conjoint sans léser les enfants du premier lit ? L'équilibre nécessite une stratégie fine.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div style="background-color: var(--primary); color: white; padding: 4rem 1rem; text-align: center;">
-        <div class="container" style="padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around;">
-            <div class="reveal">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--accent);">6 mois</div>
-                <p>Délai légal pour payer les droits<br>avant pénalités.</p>
-            </div>
-            <div class="reveal">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--accent);">60 %</div>
-                <p>Taxation entre concubins<br>sans testament.</p>
-            </div>
-            <div class="reveal">
-                <div style="font-size: 3rem; font-weight: bold; color: var(--accent);">100 k€</div>
-                <p>Abattement par enfant<br>(Net d'impôt).</p>
+    <section id="intro">
+        <div class="container animate-on-scroll">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.3rem;">
+                <p>Connaître les règles gouvernant le règlement des successions en France permet d'organiser en connaissance de cause la répartition de ses biens après son décès.</p>
+                <p style="font-weight: 800; color: var(--primary-dark);">Deux solutions s'offrent à vous : subir la loi ou organiser votre transmission.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container" id="outils">
-        <section class="reveal">
-            <div class="section-title">
-                <h2>Les outils pour vous protéger</h2>
-                <div class="line"></div>
+    <section id="notions">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <h2>I. Les Règles du Jeu</h2>
+                <div class="separator"></div>
+                <p>Avant de jouer, il faut comprendre comment la loi classe vos héritiers.</p>
             </div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <h3>📜 Le Testament</h3>
-                    <p>L'outil indispensable pour modifier la répartition légale. Il permet de favoriser un enfant, un tiers ou une association, dans la limite de la "Quotité Disponible".</p>
+            <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>Le Principe des "Ordres"</h3>
+                    <p>La loi classe les héritiers en 5 groupes (ordres). <strong class="accent-text">Un ordre supérieur élimine totalement les ordres inférieurs.</strong></p>
+                    <ul style="list-style: none; padding: 0; font-weight: 600;">
+                        <li style="padding: 1rem; border-bottom: 2px solid #eee;">1️⃣ Descendants (Enfants, petits-enfants...)</li>
+                        <li style="padding: 1rem; border-bottom: 2px solid #eee;">2️⃣ Privilégiés (Père/Mère + Frères/Sœurs)</li>
+                        <li style="padding: 1rem; border-bottom: 2px solid #eee;">3️⃣ Ascendants (Grands-parents)</li>
+                        <li style="padding: 1rem; border-bottom: 2px solid #eee; color: #888;">4️⃣ & 5️⃣ Autres collatéraux et l'État</li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <h3>🎁 La Donation</h3>
-                    <p>N'attendez pas le décès. Transmettre de votre vivant permet de bénéficier d'abattements fiscaux qui se rechargent tous les 15 ans.</p>
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>Les Degrés de Parenté</h3>
+                    <p>Dans un même ordre, c'est le plus proche en "degré" qui hérite.</p>
+                    <div style="background: var(--primary-dark); color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                        <p style="font-size: 1.2rem; margin: 0;">"Le degré le plus proche prime le degré suivant."</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Exemple : Un fils (1er degré) exclut un petit-fils (2e degré).</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>🛡️ L'Assurance-Vie</h3>
-                    <p>Le "Couteau Suisse" patrimonial. Elle permet de transmettre un capital hors succession, avec une fiscalité très avantageuse.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="danger">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <h2>II. Le Danger : Ne rien faire</h2>
+                <div class="separator" style="background: var(--accent-alert);"></div>
+                <p>C'est la succession "ab intestat" (sans testament). Voici ce qui vous attend si vous restez passif.</p>
+            </div>
+
+            <div class="alert-box">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <h3>Alerte Rouge : Concubins et Partenaires de PACS</h3>
+                    <p style="font-size: 1.1rem;">Aux yeux de la succession, <strong>vous êtes des étrangers l'un pour l'autre.</strong></p>
+                    <p>Sans testament, votre compagnon de vie n'aura <strong>strictement aucun droit</strong> sur votre patrimoine, même après 30 ans de vie commune. Il ne sera même pas considéré comme un héritier.</p>
                 </div>
             </div>
-        </section>
 
-        <section id="fiscalite" class="reveal" style="margin-top: 4rem;">
-            <div class="section-title">
-                <h2>Combien ça coûte ?</h2>
-                <p>Barème des droits de succession en ligne directe (Parents / Enfants) après abattement.</p>
+            <div style="margin-top: 3rem;">
+                <h3>Et si je suis marié(e) ?</h3>
+                <p>Le conjoint survivant est mieux protégé, mais contrairement aux idées reçues, <strong>il n'hérite pas forcément de tout</strong>, surtout en présence d'enfants (communs ou d'un premier lit). Sa part dépendra de votre régime matrimonial et de la composition de la famille.</p>
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; border-left: 5px solid #2196f3;">
+                    <strong>Le Passif :</strong> Attention, accepter une succession, c'est aussi accepter les dettes du défunt ! Heureusement, vous pouvez accepter "à concurrence de l'actif net" ou renoncer.
+                </div>
             </div>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Montant taxable</th>
-                            <th>Taux d'imposition</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Jusqu'à 8 072 €</td><td><strong>5 %</strong></td></tr>
-                        <tr><td>De 8 072 € à 12 109 €</td><td><strong>10 %</strong></td></tr>
-                        <tr><td>De 12 109 € à 15 932 €</td><td><strong>15 %</strong></td></tr>
-                        <tr><td>De 15 932 € à 552 324 €</td><td><strong>20 %</strong> (Tranche la plus courante)</td></tr>
-                        <tr><td>Au-delà de 552 324 €</td><td><strong>30 %</strong> à <strong>45 %</strong></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #64748b;">*Données à titre indicatif. Consultez un notaire pour un calcul précis.</p>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer style="background-color: #1e293b; color: #94a3b8; text-align: center; padding: 4rem 1rem;">
-        <h3 style="color: white; margin-bottom: 1rem;">Vous avez un doute ?</h3>
-        <p style="max-width: 600px; margin: 0 auto 2rem;">Une succession mal préparée peut déchirer une famille. Prenez rendez-vous pour un audit patrimonial.</p>
-        <a href="mailto:danc@free.fr" class="btn-main" style="font-size: 0.9rem; padding: 1rem 2rem;">Contacter le cabinet</a>
-        
-        <div style="margin-top: 4rem; font-size: 0.8rem; border-top: 1px solid #334155; padding-top: 2rem;">
-            © 2024 Guide Droit des Successions - Basé sur les travaux de Maître Gibert.
+    <section id="solutions">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <h2>III. Reprenez le Contrôle</h2>
+                <div class="separator"></div>
+                <p>Vous avez le pouvoir de changer les règles (dans certaines limites).</p>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.2rem;"><strong class="accent-text">La Règle d'Or : La Réserve Héréditaire</strong></p>
+                <p>Vous ne pouvez pas déshériter totalement vos enfants. Une part leur est réservée. Vous ne pouvez disposer librement que de la "Quotité Disponible".</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="solution-icon">📜</span>
+                    <h3>Le Testament</h3>
+                    <p>L'outil indispensable pour modifier la répartition légale. Il permet d'attribuer la quotité disponible à qui vous voulez (conjoint, partenaire, ami, association).</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🎁</span>
+                    <h3>La Donation</h3>
+                    <p>Transmettez de votre vivant ! La "Donation au dernier vivant" est l'arme absolue pour protéger le conjoint marié, lui offrant le maximum légal.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🛡️</span>
+                    <h3>L'Assurance-Vie</h3>
+                    <p>Le "joker" patrimonial. C'est un outil hors succession qui permet de transmettre des capitaux avec une fiscalité très avantageuse à des bénéficiaires désignés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fiscalite">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <h2>IV. La Facture Fiscale</h2>
+                <div class="separator"></div>
+                <p>L'État prend sa part. Combien ? Cela dépend de votre lien de parenté et de votre anticipation.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                <div>
+                    <h3 style="color: #2e7d32;">Les (rares) bonnes nouvelles</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">✅ <strong>Conjoints mariés et Partenaires de PACS :</strong> Exonération TOTALE de droits de succession. (Attention : le PACS doit être testamenté pour hériter !).</li>
+                        <li style="padding: 1rem 0; border-bottom: 1px solid #eee;">✅ <strong>Enfants :</strong> Abattement de 100 000 € par parent et par enfant (rechargeable tous les 15 ans pour les donations).</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-style: italic;">La déclaration est obligatoire dans les 6 mois suivant le décès. Attention à la solidarité fiscale entre héritiers !</p>
+                </div>
+
+                <div>
+                    <h3>Le Barème Progressif (Après abattement)</h3>
+                    <p>Pour les enfants (ligne directe), le surplus est taxé ainsi :</p>
+                    <div class="tax-table-container">
+                        <table>
+                            <tr><th>Tranche taxable</th><th>Taux</th></tr>
+                            <tr><td>< 8 072 €</td><td>5 %</td></tr>
+                            <tr><td>8 072 € à 12 109 €</td><td>10 %</td></tr>
+                            <tr><td>12 109 € à 15 932 €</td><td>15 %</td></tr>
+                            <tr class="highlight-row"><td>15 932 € à 552 324 €</td><td>20 %</td></tr>
+                            <tr><td>> 552 324 €</td><td>30% à 45%</td></tr>
+                        </table>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--accent-alert);">Le Piège Mortel : Entre Tiers</h3>
+                    <p>Entre concubins, amis, ou parents éloignés (au-delà du 4e degré) :</p>
+                    <div style="background: var(--accent-alert); color: white; padding: 1.5rem; border-radius: 8px; font-size: 1.5rem; font-weight: 800; text-align: center;">
+                        TAXATION À 60 %<br><span style="font-size: 1rem; font-weight: normal;">(Dès le premier euro au-delà de 1 594 € d'abattement)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--primary-dark); text-align: center; padding: 8rem 2rem;">
+        <h2 style="color: var(--white); font-size: 3rem; margin-bottom: 2rem;">Votre avenir ne doit pas dépendre du hasard.</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; margin-bottom: 4rem;">L'anticipation est la seule clé pour protéger ceux que vous aimez et éviter les conflits et la fiscalité confiscatoire.</p>
+        <button class="btn-urgent" onclick="document.getElementById('danger').scrollIntoView();">JE VEUX PROTÉGER MES PROCHES</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="color: var(--white);">Avertissement Important</h3>
+            <div class="footer-warning">
+                <p>Les informations contenues sur ce site sont données à titre indicatif et ne sauraient remplacer une consultation juridique. Les lois fiscales et civiles évoluent. Ce site a été réalisé dans un but informatif et de démonstration technologique sur la base de contenus juridiques existants.</p>
+                <p>L'auteur du site ne saurait être tenu pour responsable de l'utilisation qui pourrait être faite des informations contenues sur ce site.</p>
+            </div>
+            <p>© 2024 - Guide Succession Dynamique. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        window.addEventListener('scroll', reveal);
+        // Fonction pour révéler les éléments au défilement
+        function revealAnimations() {
+            var reveals = document.querySelectorAll('.animate-on-scroll');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Marge de déclenchement
 
-        function reveal(){
-            var reveals = document.querySelectorAll('.reveal');
-
-            for(var i = 0; i < reveals.length; i++){
-                var windowheight = window.innerHeight;
-                var revealtop = reveals[i].getBoundingClientRect().top;
-                var revealpoint = 150;
-
-                if(revealtop < windowheight - revealpoint){
+                if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add('active');
                 }
             }
         }
-        // Déclencher une fois au chargement
-        reveal();
+        // Écouteur d'événement sur le scroll
+        window.addEventListener('scroll', revealAnimations);
+        // Appel initial au chargement
+        revealAnimations();
     </script>
 
 </body>
