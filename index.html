@@ -27,7 +27,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
             color: var(--royal-red);
             margin-top: 0;
@@ -58,10 +58,15 @@
         }
         .brand span { font-size: 0.7rem; color: var(--gold); letter-spacing: 1px; margin-top: -3px; }
 
+        .nav-actions {
+            display: flex;
+            gap: 1rem; /* Espace entre les deux boutons */
+        }
+
         .nav-cta {
             background-color: var(--royal-red);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -71,6 +76,22 @@
             border: 1px solid var(--royal-red);
         }
         .nav-cta:hover { background-color: transparent; color: var(--royal-red); }
+        
+        /* Style spécifique pour le bouton secondaire (Médias) pour le distinguer légèrement ou identique */
+        .nav-cta-outline {
+            background-color: transparent;
+            color: var(--royal-red);
+            border: 1px solid var(--royal-red);
+            padding: 0.8rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .nav-cta-outline:hover { background-color: var(--royal-red); color: white; }
+
 
         /* --- HERO SECTION (IMPACT) --- */
         header {
@@ -212,6 +233,70 @@
         td { border: 1px solid #ddd; padding: 1rem; }
         tr:nth-child(even) { background: #f9f9f9; }
 
+        /* --- PUBLICATIONS & MEDIAS (NOUVEAU) --- */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        @media (min-width: 768px) {
+            .media-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+        .article-item {
+            background: white;
+            border: 1px solid #eee;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            border-left: 3px solid var(--gold);
+        }
+        .article-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--royal-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .article-link {
+            display: block;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--dark-slate);
+        }
+        .article-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--royal-red);
+            font-weight: 700;
+        }
+
         /* --- CONTACT & FOOTER --- */
         .contact-section {
             background-color: var(--royal-red);
@@ -251,6 +336,7 @@
             header h1 { font-size: 2.5rem; }
             .section-title h2 { display: none; }
             .section-title h3 { border: none; padding: 0; }
+            .nav-actions { display: none; } /* En mobile il faudrait un menu burger, ici caché pour simplicité */
         }
     </style>
 </head>
@@ -261,7 +347,11 @@
             Maître Magali GIBERT
             <span>Avocat à la Cour - Paris</span>
         </div>
-        <a href="#dossiers" class="nav-cta">Guide Juridique</a>
+        
+        <div class="nav-actions">
+            <a href="#dossiers" class="nav-cta">Guide Juridique</a>
+            <a href="#publications" class="nav-cta-outline">Médias</a>
+        </div>
     </nav>
 
     <header>
@@ -500,6 +590,52 @@
                 </div>
             </div>
         </div>
+        
+        <div id="publications" class="section-block">
+            <div class="section-title">
+                <h2>V</h2>
+                <h3>Publications & Interviews</h3>
+            </div>
+            
+            <div class="media-grid">
+                <div class="media-column">
+                    <h5 style="margin-bottom: 1.5rem; color: var(--dark-slate);">Dernière Intervention Vidéo</h5>
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/placeholder" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="media-column">
+                    <h5 style="margin-bottom: 1.5rem; color: var(--dark-slate);">Articles & Publications</h5>
+                    <ul class="article-list">
+                        <li class="article-item">
+                            <a href="#" class="article-link">
+                                <div class="article-meta">Interview | Presse Juridique</div>
+                                <div class="article-title">Les pièges de la donation-partage</div>
+                            </a>
+                        </li>
+                        <li class="article-item">
+                            <a href="#" class="article-link">
+                                <div class="article-meta">Publication | Blog du Cabinet</div>
+                                <div class="article-title">Protéger son conjoint : les nouvelles dispositions</div>
+                            </a>
+                        </li>
+                        <li class="article-item">
+                            <a href="#" class="article-link">
+                                <div class="article-meta">Article | Revue Droit & Patrimoine</div>
+                                <div class="article-title">Fiscalité de l'assurance-vie : ce qui change en 2025</div>
+                            </a>
+                        </li>
+                        <li class="article-item">
+                            <a href="#" class="article-link">
+                                <div class="article-meta">Conférence</div>
+                                <div class="article-title">L'anticipation successorale du chef d'entreprise</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -508,7 +644,7 @@
             <h3 style="color:var(--royal-red); margin-top:0;">Maître Magali GIBERT</h3>
             <p><strong>Avocat à la Cour</strong></p>
             <p>60-62 avenue Henri-Martin, 75116 Paris</p>
-            <p>Tél. 01 40 20 [info masquée] | gibertm@gmail.com</p>
+            <p>Tél. 01 40 20 [Voir PDF] | gibertm@gmail.com</p>
         </div>
 
         <div class="disclaimer">
