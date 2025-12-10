@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        /* --- DESIGN (CSS) --- */
+        :root {
+            --primary: #2563eb; /* Couleur bleue principale */
+            --dark: #0f172a;    /* Fond sombre */
+            --light: #f8fafc;   /* Texte clair */
+            --gray: #94a3b8;    /* Texte gris */
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        /* En-tête */
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, #1e293b, var(--dark));
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            border: 4px solid white;
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; }
+        .subtitle { color: var(--primary); font-size: 1.2rem; margin-top: 0.5rem; font-weight: bold; }
+        .bio { max-width: 600px; margin: 1.5rem auto 0; color: var(--gray); }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        /* Section Projets */
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 1rem; }
+        
+        h2 { border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 { margin-top: 0; }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray);
+            border-top: 1px solid #334155;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="avatar">MOI</div>
+        
+        <h1>Votre Prénom Nom</h1>
+        
+        <div class="subtitle">Développeur en herbe & Passionné de Tech</div>
+        
+        <p class="bio">
+            Bienvenue sur mon espace personnel ! J'apprends actuellement à utiliser Git et GitHub.
+            Ceci est mon tout premier site déployé automatiquement.
+        </p>
+
+        <a href="mailto:votre-email@exemple.com" class="btn">Me contacter</a>
+    </header>
+
+    <div class="container">
+        <h2>Mes Projets</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Premier Site</h3>
+                <p>Le site que vous regardez actuellement. Hébergé gratuitement sur GitHub Pages avec du HTML et du CSS intégré.</p>
+            </div>
+
+            <div class="card">
+                <h3>📸 Ma Galerie</h3>
+                <p>Un futur projet où je mettrai mes photos de voyage. En cours de construction...</p>
+            </div>
+
+            <div class="card">
+                <h3>🎮 Mon Jeu</h3>
+                <p>J'apprends le JavaScript pour créer un petit jeu vidéo directement dans le navigateur.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 - Créé avec passion via GitHub</p>
+    </footer>
+
+</body>
+</html>
