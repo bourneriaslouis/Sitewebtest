@@ -3,479 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maître Gibert | Droit des Successions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Maître Gibert | Guide Droit des Successions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- CHARTE GRAPHIQUE LUXE & MODERNE --- */
+        /* --- RESET & BASES --- */
         :root {
-            --deep-blue: #0A192F;  /* Bleu très profond, presque noir (Autorité) */
-            --gold: #D4AF37;       /* Or métallique (Prestige) */
-            --off-white: #F4F4F4;  /* Fond très clair */
-            --pure-white: #FFFFFF;
-            --text-grey: #4A5568;
+            --blue-dark: #102a43;   /* Bleu Cabinet */
+            --gold: #c5a059;        /* Or Sérieux */
+            --white: #ffffff;
+            --grey-light: #f0f4f8;
+            --text-main: #243b53;
         }
 
         html { scroll-behavior: smooth; }
-
+        
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--off-white);
-            color: var(--text-grey);
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
             line-height: 1.8;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--deep-blue);
-            margin: 0;
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif; /* Police "Avocat" */
+            color: var(--blue-dark);
+            margin-top: 2rem;
         }
 
-        /* --- NAVIGATION FLOTTANTE (GLASSMORPHISM) --- */
+        p { margin-bottom: 1.5rem; text-align: justify; }
+
+        /* --- NAVIGATION FIXE --- */
         nav {
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
+            background: var(--blue-dark);
+            color: white;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--deep-blue);
+        .nav-title { font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-        }
-
-        .nav-btn {
-            background-color: var(--deep-blue);
-            color: var(--pure-white);
-            padding: 0.8rem 1.5rem;
-            border-radius: 2px;
-            text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s;
+            transition: color 0.3s;
         }
-        .nav-btn:hover { background-color: var(--gold); }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* --- HERO SECTION IMPACTANTE --- */
+        /* --- HERO SECTION (ACCUEIL) --- */
         header {
-            height: 100vh;
-            background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.4)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(16, 42, 67, 0.85), rgba(16, 42, 67, 0.85)), url('https://images.unsplash.com/photo-1589216532382-355a1e3c3633?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Effet Parallaxe */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: white;
+            padding: 8rem 2rem;
             text-align: center;
-            color: var(--pure-white);
-            position: relative;
         }
 
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s ease forwards 0.5s;
-        }
-
-        .hero-content h1 {
-            color: var(--pure-white);
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.9);
-        }
+        header h1 { color: white; font-size: 3.5rem; margin-bottom: 1.5rem; }
+        header p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 3rem; color: #d9e2ec; }
 
         /* LE BOUTON D'ACTION */
-        .btn-main {
-            display: inline-block;
+        .btn-action {
             background-color: var(--gold);
-            color: var(--pure-white);
-            padding: 1.2rem 3rem;
-            font-size: 1rem;
-            font-weight: 600;
+            color: white;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
             text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+            border: 2px solid var(--gold);
         }
-        
-        .btn-main::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+        .btn-action:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
         }
-        
-        .btn-main:hover::after { left: 100%; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); background-color: #C5A059; }
 
-        /* --- INTRODUCTION --- */
-        .intro-section {
-            padding: 6rem 2rem;
-            background: var(--pure-white);
-            text-align: center;
-        }
-        
-        .intro-text {
-            max-width: 800px;
+        /* --- CONTENEUR PRINCIPAL --- */
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--deep-blue);
-            line-height: 1.6;
-        }
-        .intro-text span { color: var(--gold); font-style: italic; }
-
-        /* --- SECTION CONTENU (ACCORDÉON) --- */
-        .content-wrapper {
-            max-width: 1000px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            padding: 4rem 2rem;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .separator { width: 60px; height: 3px; background: var(--gold); margin: 0 auto; }
-
-        /* Style des blocs accordéon */
-        .accordion-item {
-            background: var(--pure-white);
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            overflow: hidden;
-            transition: transform 0.3s;
-            border-left: 5px solid transparent;
+        /* --- SECTIONS DE TEXTE --- */
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e1e1e1;
         }
 
-        .accordion-item:hover {
-            transform: translateX(10px);
-            border-left: 5px solid var(--gold);
-        }
-
-        .accordion-header {
+        .section-header {
+            background-color: var(--grey-light);
             padding: 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--pure-white);
-        }
-
-        .accordion-header h3 { font-size: 1.4rem; color: var(--deep-blue); }
-        .accordion-header span { font-size: 0.9rem; color: var(--gold); text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
-        
-        .accordion-icon {
-            width: 30px; height: 30px;
-            background: var(--off-white);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            transition: transform 0.3s;
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            background: #fafafa;
-            padding: 0 2rem;
-            opacity: 0;
-        }
-
-        .accordion-item.active .accordion-content {
-            padding: 2rem;
-            opacity: 1;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-left: 5px solid var(--blue-dark);
+            margin-bottom: 2rem;
         }
         
-        .accordion-item.active .accordion-icon { transform: rotate(45deg); background: var(--deep-blue); color: white; }
+        .section-header h2 { margin: 0; font-size: 2.2rem; }
 
-        /* Typography pour le contenu juridique */
-        .legal-text h3 { font-size: 1.2rem; margin-top: 2rem; color: var(--gold); font-family: 'Montserrat', sans-serif; font-weight: 600; }
-        .legal-text ul { padding-left: 1.5rem; }
-        .legal-text li { margin-bottom: 0.5rem; }
+        /* LISTES ET TABLEAUX */
+        ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
         
-        /* Tableaux */
-        table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; }
-        th { background: var(--deep-blue); color: white; padding: 1rem; text-align: left; }
-        td { border-bottom: 1px solid #eee; padding: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        th { background: var(--blue-dark); color: white; padding: 1rem; text-align: left; }
+        td { border: 1px solid #ddd; padding: 1rem; }
+        tr:nth-child(even) { background: #f8f9fa; }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER (AVERTISSEMENT) --- */
         footer {
-            background: var(--deep-blue);
-            color: rgba(255,255,255,0.6);
+            background-color: var(--blue-dark);
+            color: #bcccdc;
             padding: 4rem 2rem;
             text-align: center;
-            margin-top: 6rem;
         }
         
-        .footer-warning {
-            max-width: 700px;
+        .warning-box {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 2rem;
+            max-width: 800px;
             margin: 0 auto 2rem;
             font-size: 0.9rem;
-            padding: 1.5rem;
-            border: 1px dashed rgba(255,255,255,0.2);
+            background: rgba(0,0,0,0.2);
         }
 
-        /* --- ANIMATIONS --- */
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Classe déclenchée par JS au scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Responsive */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .accordion-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .accordion-icon { position: absolute; right: 2rem; }
-            .accordion-item { position: relative; }
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Menu caché sur mobile pour simplifier */
+            .nav-title { margin: 0 auto; }
         }
-
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Maître Gibert</a>
-            <a href="mailto:danc@free.fr" class="nav-btn">Prendre Rendez-vous</a>
+        <div class="nav-title">Maître Gibert</div>
+        <div class="nav-links">
+            <a href="#intro">Accueil</a>
+            <a href="#chap1">I. Notions</a>
+            <a href="#chap2">II. Légale</a>
+            <a href="#chap3">III. Organiser</a>
+            <a href="#chap4">IV. Fiscalité</a>
+            <a href="#avertis" style="color:var(--gold);">Avertissement</a>
         </div>
     </nav>
 
-    <header>
-        <div class="hero-content">
-            <h1>Anticiper, c'est protéger.</h1>
-            <p>Le règlement d'une succession ne s'improvise pas. <br>Laissez le droit sécuriser votre volonté.</p>
-            <a href="#dossiers" class="btn-main">Connaître mes droits</a>
-        </div>
+    <header id="intro">
+        <h1>Guide Droit des Successions</h1>
+        <p>Connaître les règles gouvernant le règlement des successions en France permet d'organiser en connaissance de cause la répartition de ses biens après son décès.</p>
+        <br>
+        <a href="#chap1" class="btn-action">Connaître mes droits</a>
     </header>
 
-    <section class="intro-section reveal">
-        <div class="intro-text">
-            "Ne rien faire, c'est laisser le code civil organiser votre succession à votre place. Or ce que le code décide n'est pas forcément conforme à <span>ce que vous souhaitez</span>."
-        </div>
-    </section>
+    <div class="container">
 
-    <div class="content-wrapper" id="dossiers">
-        
-        <div class="section-title reveal">
-            <h2>Guide Juridique Complet</h2>
-            <div class="separator"></div>
-            <p style="margin-top: 1rem;">Cliquez sur un dossier pour le consulter.</p>
-        </div>
+        <section>
+            <p><strong>Introduction :</strong> Ne rien faire, c'est laisser le code civil organiser votre succession à votre place. Or ce que le code décide n'est pas forcément conforme à ce que vous souhaitez.</p>
+            <p>Deux solutions s'offrent à vous : subir la loi ou organiser votre transmission. Ce site a pour vocation de vous présenter les mécanismes juridiques essentiels.</p>
+        </section>
 
-        <div class="accordion-item reveal">
-            <div class="accordion-header">
-                <div>
-                    <span>Chapitre I</span>
-                    <h3>Les Notions Fondamentales</h3>
-                </div>
-                <div class="accordion-icon">+</div>
+        <section id="chap1">
+            <div class="section-header">
+                <h2>I. Les Notions Fondamentales</h2>
             </div>
-            <div class="accordion-content legal-text">
-                <p>Avant d'aborder la répartition des biens, il convient de définir les règles de classement des héritiers imposées par la loi.</p>
+            
+            <p>Avant d'aborder la répartition des biens, il convient de définir les règles de classement des héritiers imposées par la loi.</p>
 
-                <h3>1. La Dévolution successorale</h3>
-                <p>La loi classe les parents du défunt en quatre groupes appelés "ordres". Chaque ordre exclut les suivants.</p>
-                <ul>
-                    <li><strong>1er Ordre :</strong> Les descendants (enfants, petits-enfants). Ils excluent tous les autres.</li>
-                    <li><strong>2ème Ordre :</strong> Les privilégiés (Père, Mère, Frères, Sœurs).</li>
-                    <li><strong>3ème Ordre :</strong> Les ascendants ordinaires (Grands-parents).</li>
-                    <li><strong>4ème Ordre :</strong> Les collatéraux ordinaires (Oncles, cousins).</li>
-                </ul>
+            <h3>1. La Dévolution successorale (Les Ordres)</h3>
+            <p>La loi classe les parents du défunt en quatre groupes appelés "ordres". Chaque ordre exclut les suivants. C'est le principe fondamental de la hiérarchie successorale.</p>
+            <ul>
+                <li><strong>1er Ordre :</strong> Les descendants (enfants, petits-enfants). S'il existe un seul enfant, il exclut tous les autres membres de la famille (parents, frères, sœurs, etc.), à l'exception du conjoint survivant.</li>
+                <li><strong>2ème Ordre :</strong> Les privilégiés. Il s'agit des pères et mères, ainsi que des frères et sœurs (et leurs descendants).</li>
+                <li><strong>3ème Ordre :</strong> Les ascendants ordinaires (grands-parents, arrière-grands-parents).</li>
+                <li><strong>4ème Ordre :</strong> Les collatéraux ordinaires (oncles, tantes, cousins) jusqu'au 6ème degré inclus.</li>
+            </ul>
 
-                <h3>2. Les Degrés de parenté</h3>
-                <p>À l'intérieur d'un même ordre, c'est la proximité de parenté qui compte. Chaque génération est un degré. Le degré le plus proche exclut le plus éloigné.</p>
+            <h3>2. Les Degrés de parenté</h3>
+            <p>À l'intérieur d'un même ordre, c'est la proximité de parenté avec le défunt qui détermine l'héritier. On compte en "degrés".</p>
+            <p>Chaque génération représente un degré. Le degré le plus proche exclut le plus éloigné. Par exemple, dans l'ordre des descendants, le fils (1er degré) exclut le petit-fils (2ème degré).</p>
+
+            <h3>3. La Fente successorale</h3>
+            <p>Lorsque la succession remonte aux ascendants ou aux collatéraux (en l'absence d'enfants et de frères/sœurs), la succession se divise en deux parts égales : une moitié pour la branche paternelle, une moitié pour la branche maternelle. Cela permet d'éviter qu'une seule branche de la famille ne capte tout l'héritage.</p>
+        </section>
+
+        <section id="chap2">
+            <div class="section-header">
+                <h2>II. La Succession Légale (Ab Intestat)</h2>
             </div>
-        </div>
 
-        <div class="accordion-item reveal">
-            <div class="accordion-header">
-                <div>
-                    <span>Chapitre II</span>
-                    <h3>La Succession Légale (Sans Testament)</h3>
-                </div>
-                <div class="accordion-icon">+</div>
+            <p>En l'absence de testament ou de donation au dernier vivant, la loi désigne impérativement les héritiers. C'est ce que l'on appelle la dévolution légale.</p>
+
+            <h3>1. Le sort du Conjoint Survivant</h3>
+            <p>Le conjoint marié occupe une place particulière, mais il n'hérite pas de tout automatiquement.</p>
+            <ul>
+                <li><strong>En présence d'enfants communs :</strong> Le conjoint a le choix entre l'usufruit de la totalité des biens OU la propriété du quart des biens.</li>
+                <li><strong>En présence d'enfants d'un autre lit :</strong> Le conjoint perd son droit d'option et ne reçoit que la propriété du quart des biens.</li>
+                <li><strong>En l'absence d'enfants mais avec parents :</strong> Le conjoint reçoit la moitié des biens (si les deux parents sont vivants) ou les trois-quarts (si un seul parent est vivant).</li>
+                <li><strong>En l'absence d'enfants et de parents :</strong> Le conjoint hérite de la totalité (à l'exclusion des frères et sœurs du défunt, sauf pour les biens de famille).</li>
+            </ul>
+
+            <div style="background-color: #ffebee; border: 1px solid #ef9a9a; padding: 1.5rem; margin: 1.5rem 0;">
+                <h4 style="margin-top:0; color: #c62828;">Attention : Concubins et PACS</h4>
+                <p style="margin-bottom:0;">Le partenaire de PACS et le concubin ne sont pas des héritiers légaux. <strong>Sans testament, ils n'ont droit à rien</strong> dans la succession, quelle que soit la durée de la vie commune.</p>
             </div>
-            <div class="accordion-content legal-text">
-                <p>En l'absence de testament ou de donation au dernier vivant, la loi désigne impérativement les héritiers.</p>
 
-                <h3>Le Conjoint Survivant</h3>
-                <p>Si le défunt laisse des enfants communs, le conjoint choisit entre l'usufruit total ou 1/4 en propriété. Si les enfants ne sont pas tous communs, il ne reçoit que le quart en propriété.</p>
+            <h3>2. L'Option Successorale</h3>
+            <p>Nul n'est tenu d'accepter une succession. L'héritier dispose de trois choix :</p>
+            <ol>
+                <li><strong>Acceptation pure et simple :</strong> L'héritier reçoit sa part et paie les dettes (même sur ses biens propres si nécessaire).</li>
+                <li><strong>Acceptation à concurrence de l'actif net :</strong> L'héritier ne paie les dettes qu'à hauteur de ce qu'il reçoit.</li>
+                <li><strong>Renonciation :</strong> L'héritier refuse tout. Il ne paie aucune dette et ne reçoit aucun bien.</li>
+            </ol>
+        </section>
 
-                <h3>Le Partenaire de PACS & Concubin</h3>
-                <p>Attention : Ils ne sont pas héritiers légaux. Sans testament, ils n'ont aucun droit sur la succession, même après des années de vie commune.</p>
-
-                <h3>L'Option Successorale</h3>
-                <ul>
-                    <li>Acceptation pure et simple.</li>
-                    <li>Acceptation à concurrence de l'actif net (protège des dettes).</li>
-                    <li>Renonciation.</li>
-                </ul>
+        <section id="chap3">
+            <div class="section-header">
+                <h2>III. Organiser sa Succession</h2>
             </div>
-        </div>
 
-        <div class="accordion-item reveal">
-            <div class="accordion-header">
-                <div>
-                    <span>Chapitre III</span>
-                    <h3>Organiser & Anticiper</h3>
-                </div>
-                <div class="accordion-icon">+</div>
+            <p>Le droit français offre des outils permettant d'aménager la transmission de son patrimoine et de ne pas subir la règle légale.</p>
+
+            <h3>1. La Réserve et la Quotité Disponible</h3>
+            <p>La liberté de transmettre n'est pas totale. La loi protège certains héritiers dits "réservataires" (les enfants). Vous ne pouvez disposer librement que de la "Quotité Disponible".</p>
+            
+            <table>
+                <tr>
+                    <th>Nombre d'enfants</th>
+                    <th>Réserve Globale (Intouchable)</th>
+                    <th>Quotité Disponible (Libre)</th>
+                </tr>
+                <tr>
+                    <td>1 enfant</td>
+                    <td>1/2 des biens</td>
+                    <td>1/2 des biens</td>
+                </tr>
+                <tr>
+                    <td>2 enfants</td>
+                    <td>2/3 des biens</td>
+                    <td>1/3 des biens</td>
+                </tr>
+                <tr>
+                    <td>3 enfants et +</td>
+                    <td>3/4 des biens</td>
+                    <td>1/4 des biens</td>
+                </tr>
+            </table>
+
+            <h3>2. Les Outils de transmission</h3>
+            <ul>
+                <li><strong>Le Testament :</strong> Acte unilatéral révocable. Il peut être olographe (écrit à la main, daté, signé) ou authentique (reçu par notaire). Il permet de léguer la quotité disponible à la personne de son choix.</li>
+                <li><strong>La Donation au dernier vivant :</strong> Acte réservé aux époux. Il permet d'augmenter les droits du conjoint survivant, lui offrant généralement le choix entre la totalité en usufruit, 1/4 en pleine propriété + 3/4 en usufruit, ou la quotité disponible.</li>
+                <li><strong>L'Assurance-Vie :</strong> Outil hors succession permettant de transmettre un capital à un bénéficiaire désigné avec une fiscalité spécifique.</li>
+            </ul>
+        </section>
+
+        <section id="chap4">
+            <div class="section-header">
+                <h2>IV. La Fiscalité</h2>
             </div>
-            <div class="accordion-content legal-text">
-                <p>Vous pouvez aménager la transmission de votre patrimoine grâce à la "Quotité Disponible".</p>
 
-                <h3>1. La Réserve Héréditaire</h3>
-                <p>La part minimale réservée à vos enfants :</p>
-                <ul>
-                    <li>1 enfant : Réserve de 1/2.</li>
-                    <li>2 enfants : Réserve de 2/3.</li>
-                    <li>3 enfants : Réserve de 3/4.</li>
-                </ul>
+            <p>Le règlement d'une succession entraîne le paiement de droits à l'administration fiscale. Le calcul s'effectue sur la part nette revenant à chaque héritier.</p>
 
-                <h3>2. Les Outils</h3>
-                <ul>
-                    <li><strong>Le Testament :</strong> Pour léguer la quotité disponible.</li>
-                    <li><strong>La Donation au dernier vivant :</strong> Indispensable pour protéger le conjoint marié (permet l'usufruit total).</li>
-                    <li><strong>L'Assurance-Vie :</strong> Outil hors succession pour transmettre un capital.</li>
-                </ul>
-            </div>
-        </div>
+            <h3>1. Les Abattements (Zone Exonérée)</h3>
+            <p>Avant application du barème, un abattement est déduit de la part reçue :</p>
+            <ul>
+                <li><strong>Conjoint survivant / Partenaire PACS (par testament) :</strong> Exonération totale de droits de succession.</li>
+                <li><strong>Enfants / Parents :</strong> 100 000 € par bénéficiaire.</li>
+                <li><strong>Frères / Sœurs :</strong> 15 932 € (Exonération totale sous condition de cohabitation et d'âge/invalidité).</li>
+                <li><strong>Neveux / Nièces :</strong> 7 967 €.</li>
+                <li><strong>Autres (Concubins, amis) :</strong> 1 594 €.</li>
+            </ul>
 
-        <div class="accordion-item reveal">
-            <div class="accordion-header">
-                <div>
-                    <span>Chapitre IV</span>
-                    <h3>La Fiscalité</h3>
-                </div>
-                <div class="accordion-icon">+</div>
-            </div>
-            <div class="accordion-content legal-text">
-                <p>Calcul des droits sur la part nette reçue.</p>
-                
-                <h3>Les Abattements</h3>
-                <ul>
-                    <li>Conjoint / PACS (testamenté) : <strong>0 € d'impôt</strong>.</li>
-                    <li>Enfants : <strong>100 000 €</strong> d'abattement.</li>
-                    <li>Tiers / Concubins : <strong>1 594 €</strong> d'abattement seulement.</li>
-                </ul>
+            <h3>2. Le Barème de taxation</h3>
+            <p>Une fois l'abattement déduit, le solde est taxé selon les taux suivants :</p>
+            
+            <h4>En ligne directe (Parents / Enfants)</h4>
+            <table>
+                <tr><th>Tranche taxable</th><th>Taux</th></tr>
+                <tr><td>Jusqu'à 8 072 €</td><td>5 %</td></tr>
+                <tr><td>De 8 072 € à 12 109 €</td><td>10 %</td></tr>
+                <tr><td>De 12 109 € à 15 932 €</td><td>15 %</td></tr>
+                <tr><td>De 15 932 € à 552 324 €</td><td>20 %</td></tr>
+                <tr><td>De 552 324 € à 902 838 €</td><td>30 %</td></tr>
+                <tr><td>De 902 838 € à 1 805 677 €</td><td>40 %</td></tr>
+                <tr><td>Au-delà</td><td>45 %</td></tr>
+            </table>
 
-                <h3>Le Barème (Enfants)</h3>
-                <table>
-                    <tr><th>Tranche</th><th>Taux</th></tr>
-                    <tr><td>< 8 072 €</td><td>5 %</td></tr>
-                    <tr><td>... à 15 932 €</td><td>15 %</td></tr>
-                    <tr><td>... à 552 324 €</td><td>20 %</td></tr>
-                    <tr><td>> 552 324 €</td><td>30% - 45%</td></tr>
-                </table>
-                <p><strong>Note importante :</strong> Entre concubins ou tiers, le taux est unique de <strong>60%</strong>.</p>
-            </div>
-        </div>
+            <h4>Entre Frères et Sœurs</h4>
+            <ul>
+                <li>35 % jusqu'à 24 430 €</li>
+                <li>45 % au-delà</li>
+            </ul>
+
+            <h4>Entre tiers (Concubins, parents éloignés au-delà du 4e degré)</h4>
+            <p>Taux unique de <strong>60 %</strong>.</p>
+        </section>
 
     </div>
 
-    <footer>
-        <div class="footer-warning">
-            <strong>Avertissement Légal :</strong><br>
-            Les informations contenues sur ce site (barèmes, lois) sont données à titre indicatif sur la base des travaux de Maître Gibert. Elles ne sauraient remplacer une consultation juridique personnalisée.
+    <footer id="avertis">
+        <h3>Avertissement Légal</h3>
+        <div class="warning-box">
+            <p>Les informations contenues sur ce site, y compris les simulations et données fiscales, sont fournies à titre purement indicatif. Elles ne sauraient en aucun cas constituer une consultation juridique et n'engagent pas la responsabilité du cabinet.</p>
+            <p>Le droit des successions est une matière complexe et évolutive. Chaque situation familiale et patrimoniale est unique. Pour toute prise de décision ou analyse de votre situation personnelle, nous vous invitons impérativement à consulter.</p>
         </div>
         <p>© Cabinet Maître Gibert - Droit des Successions</p>
-        <p style="font-size: 0.8rem; opacity: 0.5;">Design Web Dynamique</p>
+        <p><a href="mailto:danc@free.fr" style="color:#bcccdc">Contacter le webmaster</a></p>
     </footer>
-
-    <script>
-        // 1. GESTION DE L'ACCORDÉON
-        const accordionItems = document.querySelectorAll('.accordion-item');
-
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
-            
-            header.addEventListener('click', () => {
-                // Fermer les autres (optionnel, pour un effet plus propre)
-                /* accordionItems.forEach(i => {
-                    if(i !== item) {
-                        i.classList.remove('active');
-                        i.querySelector('.accordion-content').style.maxHeight = null;
-                    }
-                });
-                */
-
-                // Basculer l'état
-                item.classList.toggle('active');
-                
-                const content = item.querySelector('.accordion-content');
-                if (item.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                } else {
-                    content.style.maxHeight = null;
-                }
-            });
-        });
-
-        // 2. GESTION DU SCROLL REVEAL (ANIMATION)
-        window.addEventListener('scroll', reveal);
-
-        function reveal(){
-            var reveals = document.querySelectorAll('.reveal');
-            var windowheight = window.innerHeight;
-            var elementVisible = 100;
-
-            for(var i = 0; i < reveals.length; i++){
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if(elementTop < windowheight - elementVisible){
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-        // Lancer une fois au chargement
-        reveal();
-    </script>
 
 </body>
 </html>
