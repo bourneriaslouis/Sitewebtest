@@ -3,433 +3,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maître Magali Gibert | Guide Droit des Successions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Maître Magali GIBERT | Guide Expert Droit des Successions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* --- CHARTE GRAPHIQUE ROUGE INSTITUTIONNEL --- */
+        /* --- CHARTE GRAPHIQUE "INSTITUTIONNEL & PREMIUM" --- */
         :root {
-            --primary-red: #8a1c20; /* Rouge Bordeau Juridique */
-            --accent-red: #b92b30;  /* Rouge plus vif pour l'action */
-            --dark-grey: #2c3e50;
-            --light-bg: #f9f9f9;
-            --white: #ffffff;
-            --text-color: #333;
+            --royal-red: #800020;    /* Rouge Bordeau Profond (Robe avocat / Palais) */
+            --bright-red: #a30029;   /* Rouge plus vif pour interactivité */
+            --gold: #D4AF37;         /* Doré pour le prestige */
+            --dark-slate: #1a1a1a;   /* Noir doux */
+            --off-white: #fcfcfc;    /* Fond papier */
+            --light-gray: #f4f4f4;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
-            font-family: 'Lato', sans-serif;
-            color: var(--text-color);
-            background-color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--off-white);
+            color: var(--dark-slate);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            color: var(--primary-red);
-            margin-top: 1.5rem;
+            color: var(--royal-red);
+            margin-top: 0;
         }
 
-        h1 { margin: 0; }
-
-        p { text-align: justify; margin-bottom: 1rem; }
-
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION FLOTTANTE --- */
         nav {
             position: sticky;
             top: 0;
-            background-color: var(--primary-red);
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1rem 3rem;
             z-index: 1000;
-            padding: 0 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            border-bottom: 3px solid var(--royal-red);
         }
 
-        .nav-brand {
-            color: white;
+        .brand {
+            font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: #ffeb3b; }
-
-        /* --- HERO SECTION (IMPACT) --- */
-        header {
-            /* Image de fond sombre type "Bureau avocat" ou "Palais de justice" avec filtre rouge */
-            background: linear-gradient(rgba(138, 28, 32, 0.85), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
+            letter-spacing: 2px;
+            color: var(--royal-red);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 60vh;
         }
+        .brand span { font-size: 0.7rem; color: var(--gold); letter-spacing: 1px; margin-top: -3px; }
 
-        header h1 {
+        .nav-cta {
+            background-color: var(--royal-red);
             color: white;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        /* LE BOUTON DYNAMIQUE */
-        .btn-main {
-            background-color: white;
-            color: var(--primary-red);
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 0.8rem 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 2px;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border: 1px solid var(--royal-red);
         }
+        .nav-cta:hover { background-color: transparent; color: var(--royal-red); }
 
-        .btn-main:hover {
-            background-color: var(--accent-red);
-            color: white;
-            border-color: var(--accent-red);
-            transform: translateY(-3px);
-        }
-
-        /* --- CONTENU --- */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section-header {
+        /* --- HERO SECTION (IMPACT) --- */
+        header {
+            position: relative;
+            height: 90vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(128, 0, 32, 0.8)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            display: inline-block;
+            text-align: left;
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+        }
+
+        /* LE BOUTON "CONNAÎTRE MES DROITS" */
+        .btn-gold-pulse {
+            background-color: var(--gold);
+            color: var(--dark-slate);
+            padding: 1.5rem 4rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            animation: pulse 2s infinite;
+            transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-gold-pulse:hover { transform: translateY(-5px); background-color: #e5c156; }
+
+        /* --- INTRO SECTION --- */
+        .intro {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: white;
+        }
+        .intro p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.2rem; color: #555; }
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--royal-red);
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        /* --- CAPSULES / ACCORDÉONS --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+        .section-block { margin-bottom: 6rem; }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
             margin-bottom: 3rem;
         }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .separator { width: 60px; height: 4px; background: var(--primary-red); margin: 0 auto; }
+        .section-title h2 { font-size: 3rem; margin: 0; margin-right: 2rem; opacity: 0.15; position: absolute; z-index: 0; }
+        .section-title h3 { font-size: 2.5rem; margin: 0; z-index: 1; position: relative; padding-left: 2rem; border-left: 5px solid var(--royal-red); }
 
-        /* Style des listes et encadrés */
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        
-        .highlight-box {
-            background-color: #fff5f5; /* Fond rouge très pâle */
-            border-left: 5px solid var(--primary-red);
-            padding: 1.5rem;
-            margin: 2rem 0;
+        /* Style des capsules */
+        .capsule {
+            background: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
         }
 
-        /* TABLEAUX (Fiscalité) */
-        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.9rem; }
-        th { background: var(--primary-red); color: white; padding: 1rem; text-align: left; }
-        td { border: 1px solid #ddd; padding: 0.8rem; }
+        .capsule:hover { transform: translateX(10px); border-left-color: var(--gold); }
+
+        .capsule-header {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .capsule-header h4 { margin: 0; font-size: 1.3rem; color: var(--dark-slate); font-weight: 600; font-family: 'Montserrat', sans-serif; }
+        .capsule-icon { font-size: 1.5rem; color: var(--royal-red); transition: transform 0.3s; }
+
+        .capsule-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease;
+            background: #fafafa;
+            padding: 0 2rem;
+            opacity: 0;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .capsule.active .capsule-content {
+            padding: 2rem;
+            opacity: 1;
+            border-top: 1px solid #eee;
+        }
+        .capsule.active .capsule-icon { transform: rotate(45deg); }
+        .capsule.active .capsule-header h4 { color: var(--royal-red); }
+
+        /* --- ELEMENTS DE TEXTE SPÉCIFIQUES --- */
+        .legal-box { background: #fff5f5; padding: 1.5rem; border-left: 3px solid var(--royal-red); margin: 1.5rem 0; font-style: italic; }
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.8rem; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; font-size: 0.9rem; }
+        th { background: var(--royal-red); color: white; padding: 1rem; text-align: left; }
+        td { border: 1px solid #ddd; padding: 1rem; }
         tr:nth-child(even) { background: #f9f9f9; }
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--dark-grey);
-            color: #bdc3c7;
-            padding: 4rem 2rem;
+        /* --- CONTACT & FOOTER --- */
+        .contact-section {
+            background-color: var(--royal-red);
+            color: white;
+            padding: 5rem 2rem;
             text-align: center;
-            font-size: 0.9rem;
         }
-
-        .warning-legal {
-            border: 1px dashed rgba(255,255,255,0.3);
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            background: rgba(0,0,0,0.2);
-        }
-        
         .contact-card {
             background: white;
-            color: var(--text-color);
-            padding: 2rem;
-            max-width: 400px;
-            margin: -80px auto 4rem; /* Chevauchement */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--primary-red);
-            border-radius: 4px;
-            text-align: center;
+            color: var(--dark-slate);
+            max-width: 500px;
+            margin: -100px auto 0;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             position: relative;
+            z-index: 10;
         }
+        
+        .footer-legal {
+            background: #111;
+            color: #666;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .disclaimer { border: 1px solid #333; padding: 2rem; margin-bottom: 2rem; max-width: 800px; margin: 0 auto 2rem; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Responsive */
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplification mobile */
-            .nav-brand { margin: 0 auto; }
+            .section-title h2 { display: none; }
+            .section-title h3 { border: none; padding: 0; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-brand">Maître Magali Gibert</div>
-        <div class="nav-links">
-            <a href="#intro">Présentation</a>
-            <a href="#notions">I. Notions</a>
-            <a href="#legale">II. Légale</a>
-            <a href="#prevoir">III. Organiser</a>
-            <a href="#fiscalite">IV. Fiscalité</a>
-            <a href="#contact">Contact</a>
+        <div class="brand">
+            Maître Magali GIBERT
+            <span>Avocat à la Cour - Paris</span>
         </div>
+        <a href="#dossiers" class="nav-cta">Guide Juridique</a>
     </nav>
 
     <header>
-        <h1>Droit des Successions</h1>
-        <p class="subtitle">Connaître les règles gouvernant le règlement des successions en France permet d'organiser en connaissance de cause la répartition de ses biens après son décès.</p>
-        
-        <a href="#intro" class="btn-main">Connaître mes droits</a>
+        <div class="hero-content">
+            <h1>Maître de votre Succession</h1>
+            [cite_start]<p>Connaître les règles gouvernant le règlement des successions en France permet d'organiser en connaissance de cause la répartition de ses biens après son décès[cite: 7].</p>
+            
+            <a href="#dossiers" class="btn-gold-pulse">Connaître mes droits</a>
+        </div>
     </header>
 
-    <div class="contact-card" id="contact">
-        <h3 style="margin-top:0;">Maître Magali GIBERT</h3>
-        <p style="font-weight:bold; color:var(--primary-red);">Avocat à la Cour</p>
-        <p>60-62 avenue Henri-Martin<br>75116 Paris</p>
-        <p>Tél. 01 40 20 [info masquée]</p>
-        <p>Email: gibertm@gmail.com</p>
-    </div>
-
-    <div class="container">
-
-        <section id="intro">
-            <div class="section-header">
-                <h2>Présentation</h2>
-                <div class="separator"></div>
+    <section class="intro">
+        <div class="container">
+            <div class="quote">
+                [cite_start]"Ne rien faire, c'est laisser le code civil organiser votre succession à votre place." [cite: 9]
             </div>
-            <p><strong>Ne rien faire, c'est laisser le code civil organiser votre succession à votre place.</strong> Or ce que le code décide, n'est pas forcément conforme à ce que vous croyez.</p>
+            [cite_start]<p>Or ce que le code décide n'est pas forcément conforme à ce que vous croyez[cite: 10]. [cite_start]Deux solutions s'offrent à vous : subir la loi (succession légale) ou organiser votre transmission[cite: 23].</p>
+            <p style="font-size: 0.9rem; color: #888; margin-top: 2rem;">
+                [cite_start]<em>Note : Pour les successions internationales, nous vous conseillons de consulter le site de l'Union Européenne[cite: 32].</em>
+            </p>
+        </div>
+    </section>
+
+    <div id="dossiers" class="container">
+
+        <div class="section-block">
+            <div class="section-title">
+                <h2>I</h2>
+                <h3>Les Notions Fondamentales</h3>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Comment se fait la répartition ? (Ordres & Degrés)</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p>La répartition selon le code civil se fait par ordre des héritiers et par degré de parenté[cite: 114].</p>
+                    <p><strong>L'Ordre Successoral :</strong> Il s'agit d'un groupe de personnes habiles à se porter héritiers. [cite_start]Chaque ordre appelé à hériter exclut les personnes figurant dans l'ordre suivant[cite: 122].</p>
+                    <ul>
+                        [cite_start]<li><strong>1er Ordre :</strong> Descendants (Enfants, petits-enfants...)[cite: 134].</li>
+                        [cite_start]<li><strong>2ème Ordre :</strong> Privilégiés (Père/Mère + Frères/Sœurs)[cite: 155].</li>
+                        [cite_start]<li><strong>3ème Ordre :</strong> Ascendants ordinaires (Grands-parents)[cite: 189].</li>
+                        [cite_start]<li><strong>4ème Ordre :</strong> Collatéraux ordinaires (Oncles, cousins jusqu'au 6e degré)[cite: 201].</li>
+                    </ul>
+                    <p><strong>Le Degré :</strong> Dans un même ordre, le degré le plus proche prime. En ligne directe, on compte les générations (Père/Fils = 1 degré). [cite_start]En ligne collatérale, on remonte à l'ancêtre commun[cite: 213, 360].</p>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Mécanismes Spéciaux : Fente & Représentation</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p><strong>La Fente :</strong> Mécanisme qui permet de répartir la succession en deux parties égales entre la ligne paternelle et la ligne maternelle (dans les 3e et 4e ordres)[cite: 231].</p>
+                    <p><strong>La Représentation :</strong> Fiction juridique restaurant l'ordre logique des décès. [cite_start]Des héritiers viennent à la place d'un ascendant décédé[cite: 237]. [cite_start]Exemple : Si vous décédez avant votre père, vos enfants prennent votre place dans sa succession[cite: 241].</p>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Réserve & Quotité Disponible</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <div class="legal-box">
+                        <strong>Héritier Réservataire :</strong> Personne que vous ne pouvez pas déshériter. [cite_start]Une fraction du patrimoine lui est réservée par la loi[cite: 251].
+                    </div>
+                    <p>Sont réservataires : Les descendants et à défaut, le conjoint survivant. [cite_start]Les ascendants ne le sont plus depuis 2008[cite: 844].</p>
+                    [cite_start]<p><strong>Quotité Disponible :</strong> Fraction dont vous pouvez disposer librement[cite: 258].</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-title">
+                <h2>II</h2>
+                <h3>La Succession Légale (Sans Testament)</h3>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Qui hérite si je ne fais rien ?</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <p>Le Code Civil décide à votre place. [cite_start]Tout dépend de votre situation familiale[cite: 315].</p>
+                    <ul>
+                        <li><strong>Si vous avez des enfants :</strong> Ils excluent les autres ordres.</li>
+                        <li><strong>Sans enfants, avec conjoint :</strong> Le conjoint reçoit la moitié (si 2 parents vivants) ou les 3/4 (si 1 parent). [cite_start]Si aucun parent, le conjoint prend tout[cite: 422].</li>
+                        [cite_start]<li><strong>Sans conjoint, sans enfants :</strong> Vos parents prennent 1/4 chacun, le reste pour les frères et sœurs[cite: 428].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Les Droits du Conjoint Survivant</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <p>Le conjoint occupe une place particulière. En présence d'enfants communs, il a le choix entre l'usufruit de la totalité ou 1/4 en propriété. [cite_start]Si enfants d'un autre lit, il n'a que le 1/4 en propriété[cite: 1319].</p>
+                    [cite_start]<p><strong>Droit au logement :</strong> Il a droit à la jouissance gratuite du logement pendant 1 an (droit temporaire) et peut demander un droit d'usage viager[cite: 757].</p>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Accepter ou Refuser la succession ?</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <p>Nul n'est tenu d'accepter. [cite_start]Vous avez trois choix[cite: 799, 819]:</p>
+                    <ol>
+                        <li><strong>Acceptation pure et simple :</strong> Confusion des patrimoines. Vous payez les dettes indéfiniment. [cite_start]Attention aux actes tacites (vente de meubles)[cite: 781].</li>
+                        <li><strong>Acceptation à concurrence de l'actif net :</strong> Vous ne payez les dettes qu'à hauteur de l'héritage. [cite_start]Nécessite un inventaire[cite: 806].</li>
+                        [cite_start]<li><strong>Renonciation :</strong> Vous ne recevez rien et ne payez rien[cite: 802].</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-title">
+                <h2>III</h2>
+                <h3>Organiser sa Succession</h3>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>1. La Réserve Héréditaire (Le calcul)</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p>Vous ne pouvez disposer librement que de la "Quotité Disponible"[cite: 860]:</p>
+                    <table>
+                        <tr><th>Enfants</th><th>Réserve (Intouchable)</th><th>Quotité Disponible</th></tr>
+                        <tr><td>1 enfant</td><td>1/2</td><td>1/2</td></tr>
+                        <tr><td>2 enfants</td><td>2/3</td><td>1/3</td></tr>
+                        <tr><td>3 enfants et +</td><td>3/4</td><td>1/4</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>2. Les Outils (Testament & Donations)</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <ul>
+                        <li><strong>Le Testament :</strong> Acte unilatéral révocable. Olographe (manuscrit) ou Authentique (notaire). [cite_start]Permet de léguer la quotité disponible[cite: 883].</li>
+                        <li><strong>La Donation :</strong> Acte irrévocable du vivant. [cite_start]Rapportable à la succession et réévaluée au jour du décès[cite: 888].</li>
+                        <li><strong>La Donation-Partage :</strong> Moyen le plus sûr. [cite_start]Figée au jour de la donation (pas de réévaluation)[cite: 897].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>3. Protéger son Conjoint ou Partenaire</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p><strong>Conjoint Marié :</strong> La "Donation au dernier vivant" permet d'augmenter ses droits (usufruit total, ou quotité ordinaire + usufruit)[cite: 1354]. [cite_start]On peut aussi aménager le régime matrimonial (Communauté universelle)[cite: 1363].</p>
+                    <div class="legal-box" style="border-color: var(--bright-red);">
+                        <strong>ATTENTION CONCUBINS / PACS :</strong><br>
+                        Le partenaire de PACS et le concubin ne sont PAS héritiers légaux. [cite_start]Sans testament, ils n'ont droit à RIEN[cite: 1383, 1376].<br>
+                        [cite_start]Fiscalité : Le PACS est exonéré, mais le concubin est taxé à 60% ![cite: 1399].
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="section-title">
+                <h2>IV</h2>
+                <h3>La Fiscalité</h3>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Abattements & Exonérations</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p>Depuis la loi TEPA (2007), le conjoint et le partenaire de PACS sont <strong>exonérés</strong> de droits de succession[cite: 1517].</p>
+                    [cite_start]<p>Pour les autres, un abattement s'applique (renouvelable tous les 15 ans)[cite: 1539]:</p>
+                    <ul>
+                        [cite_start]<li>Enfants / Parents : 100 000 € [cite: 1543]</li>
+                        [cite_start]<li>Frères / Sœurs : 15 932 € (Exonération totale si cohabitation > 5 ans, >50 ans ou infirme) [cite: 1832]</li>
+                        <li>Neveux / Nièces : 7 967 €</li>
+                        [cite_start]<li>Tiers / Concubins : 1 594 € [cite: 2098]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Les Barèmes de Taxation</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    <p>Après abattement, le solde est taxé :</p>
+                    
+                    [cite_start]<strong>En Ligne Directe (Parents/Enfants)[cite: 1583]:</strong>
+                    <table>
+                        <tr><th>Part nette taxable</th><th>Taux</th></tr>
+                        <tr><td>Jusqu'à 8 072 €</td><td>5 %</td></tr>
+                        <tr><td>De 8 072 € à 12 109 €</td><td>10 %</td></tr>
+                        <tr><td>De 12 109 € à 15 932 €</td><td>15 %</td></tr>
+                        <tr><td>De 15 932 € à 552 324 €</td><td>20 %</td></tr>
+                        <tr><td>De 552 324 € à 902 838 €</td><td>30 %</td></tr>
+                        <tr><td>De 902 838 € à 1 805 677 €</td><td>40 %</td></tr>
+                        <tr><td>Au-delà</td><td>45 %</td></tr>
+                    </table>
+
+                    <strong>Autres Héritiers :</strong>
+                    <ul>
+                        [cite_start]<li>Frères et Sœurs : 35% (< 24 430 €) puis 45%[cite: 2043].</li>
+                        [cite_start]<li>Parents jusqu'au 4e degré : 55%[cite: 2087].</li>
+                        [cite_start]<li>Tiers et parents éloignés (Concubins) : 60%[cite: 2114].</li>
+                    </ul>
+                </div>
+            </div>
             
-            <div class="highlight-box">
-                <h4>Deux solutions s'offrent à vous :</h4>
-                <ul>
-                    <li><strong>I. Ne rien faire :</strong> c'est la succession légale ou ab intestat (sans testament). Le code civil prévoit alors les règles qui seront applicables. Ces règles s'appliquent à toutes les successions où aucun testament n'a été fait.</li>
-                    <li><strong>II. Prévoir et organiser</strong> la répartition de vos biens : Répartir votre patrimoine (testament, donation...), protéger votre conjoint, protéger votre concubin(e)/pacsé(e), assurance-vie.</li>
-                </ul>
+             <div class="capsule">
+                <div class="capsule-header">
+                    <h4>Évaluation & Paiement</h4>
+                    <span class="capsule-icon">+</span>
+                </div>
+                <div class="capsule-content">
+                    [cite_start]<p>La déclaration est obligatoire dans les 6 mois[cite: 1487]. [cite_start]Il y a solidarité fiscale entre les héritiers[cite: 1481].</p>
+                    <p><strong>Évaluation :</strong> Valeur vénale au jour du décès. [cite_start]Abattement de 20% sur la résidence principale si occupée par le conjoint ou les enfants[cite: 2240]. [cite_start]Attention aux sous-estimations (redressements)[cite: 2229].</p>
+                </div>
             </div>
-            
-            <p><strong>Successions en Europe :</strong> A l'international nous vous conseillons de vous rapprocher dans chaque pays des spécialistes concernés. [cite_start]Toutefois afin de vous aider dans vos démarches nous vous conseillons d'aller faire un tour sur le site de l'union européenne : successions en Europe [cite: 32-33].</p>
-        </section>
-
-        <section id="notions">
-            <div class="section-header">
-                <h2>I. Les Notions Fondamentales</h2>
-                <div class="separator"></div>
-            </div>
-
-            <h3>1. Répartition de la succession en l'absence de testament</h3>
-            <p>La répartition selon le code civil se fait par <strong>ordre des héritiers</strong> et par <strong>degré de parenté</strong>. Ce qui signifie qu'on vérifie d'abord qu'il n'existe aucune personne dans un ordre avant de passer à l'ordre suivant.</p>
-            <p>Dans un même ordre, le degré de parenté le plus proche prime le degré suivant. A degré de parenté égal la répartition se fait par tête.</p>
-
-            <h3>2. Qu'est-ce qu'un ordre successoral ?</h3>
-            <p>Il s'agit d'un groupe de personnes habiles à se porter héritiers d'une autre. Ce groupe est déterminé en fonction des liens familiaux avec le défunt. Il existe 5 ordres de successibles, chaque ordre appelé à hériter exclut les personnes figurant dans l'ordre suivant.</p>
-
-            <h3>3. Quel est l'ordre des successibles ?</h3>
-            <p>Depuis le 1e juillet 2002 : le conjoint survivant passe avant les frères et sœurs.</p>
-            <ul>
-                <li><strong>1er Ordre :</strong> Descendants (enfants, petits-enfants, arrière-petits-enfants).</li>
-                <li><strong>2ème Ordre :</strong> Privilégiés (Pères et mères) et Collatéraux privilégiés (frères et sœurs, neveux, nièces...).</li>
-                <li><strong>3ème Ordre :</strong> Ascendants ordinaires (Grands-parents, arrière-grands-parents).</li>
-                <li><strong>4ème Ordre :</strong> Collatéraux ordinaires (Oncles, tantes, cousins jusqu'au 6e degré).</li>
-                <li><strong>5ème Ordre :</strong> L'État.</li>
-            </ul>
-
-            <h3>4. Les Degrés de parenté</h3>
-            <p>Ils servent à déterminer si une personne peut être appelée à la succession d'une autre. A moins que le défunt soit un mineur de -16 ans ou un incapable, la dévolution s'arrête au 6e degré. Pour les incapables, jusqu'au 12e degré.</p>
-            <p><strong>Calcul :</strong> En ligne directe, on compte les générations (Père/Fils = 1 degré). En ligne collatérale, on remonte à l'ancêtre commun (Frère/Sœur = 2 degrés ; Oncle/Neveu = 3 degrés ; Cousins germains = 4 degrés).</p>
-
-            <h3>5. La Fente successorale</h3>
-            <p>La fente est un mécanisme juridique qui permet de répartir la succession en deux parties, l'une pour la ligne paternelle et l'autre pour la ligne maternelle. La fente s'effectue toujours dans les 3e ordre (ascendants) et 4e ordre (collatéraux ordinaires).</p>
-
-            <h3>6. La Représentation</h3>
-            <p>C'est une fiction juridique qui a vocation à restaurer l'ordre logique des décès. Des héritiers du défunt viennent à sa succession à la place d'un de leurs ascendants décédé antérieurement. La répartition se fait alors par souche.</p>
-
-            <h3>7. Filiations</h3>
-            <p>Depuis 1972 et la loi de 2001, il n'existe plus de différence entre enfants légitimes, naturels ou adultérins. Ils ont les mêmes droits.</p>
-
-            <h3>8. Héritier Réservataire et Quotité Disponible</h3>
-            <p><strong>Héritier réservataire :</strong> Personne que vous ne pouvez pas déshériter (descendants, ou à défaut conjoint). Une fraction du patrimoine (la réserve) leur revient obligatoirement.</p>
-            <p><strong>Quotité Disponible :</strong> Fraction de votre patrimoine dont vous pouvez disposer librement.</p>
-        </section>
-
-        <section id="legale">
-            <div class="section-header">
-                <h2>II. La Succession Légale (Ab Intestat)</h2>
-                <div class="separator"></div>
-            </div>
-
-            <h3>1. Je n'ai pas fait de testament, qui hérite ?</h3>
-            <p>Tout dépend de votre situation familiale. Le code civil instaure un ordre. S'il existe un descendant, il prime sur les collatéraux.</p>
-
-            <h3>2. Si je meurs avant mes parents ?</h3>
-            <p>Vos enfants seront appelés à la succession de vos parents par le mécanisme de la <strong>représentation</strong>. Ils se partageront la part qui aurait dû vous revenir.</p>
-
-            <h3>3. Je n'ai pas d'enfant, qui hérite ?</h3>
-            <ul>
-                <li><strong>Avec conjoint survivant :</strong> Le conjoint reçoit la 1/2 de la succession et chacun des parents 1/4. Si un seul parent, conjoint 3/4. Si aucun parent, conjoint 100% (sauf droit de retour des frères/sœurs sur biens de famille).</li>
-                <li><strong>Sans conjoint :</strong> Vos parents prennent 1/4 chacun, le reste pour les frères et sœurs. Si pas de parents, frères et sœurs prennent tout.</li>
-            </ul>
-
-            <h3>4. Les Droits du Conjoint Survivant</h3>
-            <p>En l'absence de descendants, il devient héritier réservataire pour 1/4. Il bénéficie d'un <strong>droit au logement</strong> temporaire (1 an gratuit) et viager (droit d'usage et d'habitation, imputable sur sa part). Il a droit à une pension alimentaire s'il est dans le besoin.</p>
-            <p><strong>Régime matrimonial :</strong> Si régime de communauté, le conjoint récupère déjà sa moitié de communauté avant la succession.</p>
-
-            <h3>5. Conséquences de l'acceptation</h3>
-            <p>L'acceptation pure et simple emporte confusion des patrimoines : vous êtes tenu des dettes du défunt indéfiniment. Attention aux actes d'héritiers (vente d'objets, congé locataire) qui valent acceptation tacite.</p>
-
-            <h3>6. L'Option Successorale</h3>
-            <ul>
-                <li><strong>La renonciation :</strong> Vous ne recevez rien et ne payez rien. (Déclaration au greffe du TGI).</li>
-                <li><strong>Acceptation à concurrence de l'actif net :</strong> Vous ne payez les dettes qu'à hauteur de l'actif reçu. (Procédure stricte avec inventaire).</li>
-            </ul>
-
-            <h3>7. Composition de la succession</h3>
-            <p>Actif propre + part de communauté - Passif. Attention aux contrats de mariage (attribution intégrale au survivant) qui peuvent réduire l'actif successoral à rien.</p>
-        </section>
-
-        <section id="prevoir">
-            <div class="section-header">
-                <h2>III. Organiser sa Succession</h2>
-                <div class="separator"></div>
-            </div>
-
-            <p>Pour préparer votre succession vous devez connaître ce qui vous est possible de faire. <strong>Attention vous devez respecter la réserve héréditaire.</strong></p>
-
-            <h3>1. Réserve et Quotité Disponible</h3>
-            <p>Depuis 2008, les ascendants ne sont plus réservataires. Seuls les descendants et le conjoint (à défaut de descendants) le sont.</p>
-            <table>
-                <tr><th>Nombre d'enfants</th><th>Réserve (Intouchable)</th><th>Quotité Disponible (Libre)</th></tr>
-                <tr><td>1 enfant</td><td>1/2</td><td>1/2</td></tr>
-                <tr><td>2 enfants</td><td>2/3</td><td>1/3</td></tr>
-                <tr><td>3 enfants et +</td><td>3/4</td><td>1/4</td></tr>
-            </table>
-
-            <h3>2. Comment transmettre ?</h3>
-            <ul>
-                <li><strong>Le Testament :</strong> Acte unilatéral révocable (Olographe ou Authentique). S'il dépasse la quotité disponible, il sera réduit.</li>
-                <li><strong>La Donation :</strong> Acte irrévocable de son vivant. Rapportable à la succession (réévaluée au décès).</li>
-                <li><strong>La Donation-Partage :</strong> Figée au jour de la donation (pas de réévaluation). Moyen le plus sûr si tous les enfants participent.</li>
-            </ul>
-
-            <h3>3. Protéger son conjoint</h3>
-            <p>On peut utiliser la <strong>Quotité Disponible Spéciale entre époux</strong> via une donation au dernier vivant ou un testament. Elle permet de laisser au conjoint :</p>
-            <ul>
-                <li>Soit la quotité disponible ordinaire.</li>
-                <li>Soit 1/4 en pleine propriété + 3/4 en usufruit.</li>
-                <li>Soit la totalité en usufruit.</li>
-            </ul>
-            <p>On peut aussi changer de régime matrimonial (Communauté universelle avec attribution intégrale).</p>
-
-            <div class="highlight-box">
-                <h4>4. Protéger son Concubin / Partenaire de PACS</h4>
-                <p>Le concubin et le partenaire de PACS ne sont <strong>pas héritiers légaux</strong>. Sans testament, ils n'ont rien.</p>
-                <p><strong>Fiscalité :</strong>
-                <br>- PACS : Exonéré de droits de succession (comme le conjoint).
-                <br>- Concubin : Taxé à 60% après un abattement dérisoire de 1 594 €.
-                </p>
-                <p><strong>Logement :</strong> Penser à la clause de tontine lors de l'achat ou au legs de l'usufruit.</p>
-            </div>
-        </section>
-
-        <section id="fiscalite">
-            <div class="section-header">
-                <h2>IV. Fiscalité des Successions</h2>
-                <div class="separator"></div>
-            </div>
-
-            <p>Les règles civiles et fiscales sont indépendantes. Chaque héritier paie des droits sur sa part nette, mais il existe une solidarité fiscale entre héritiers.</p>
-
-            <h3>1. Déclaration</h3>
-            <p>Obligatoire dans les 6 mois du décès.</p>
-
-            <h3>2. Exonérations et Abattements</h3>
-            <p><strong>Exonération totale :</strong> Conjoint survivant et Partenaire de PACS (loi TEPA 2007).</p>
-            <p><strong>Abattements (rechargeables tous les 15 ans) :</strong></p>
-            <ul>
-                <li>Enfants / Parents : 100 000 €</li>
-                <li>Frères / Sœurs : 15 932 € (Exonération totale sous conditions de cohabitation/âge)</li>
-                <li>Neveux / Nièces : 7 967 €</li>
-                <li>Tiers / Concubins : 1 594 €</li>
-                <li>Handicapés : Abattement supplémentaire de 159 325 €</li>
-            </ul>
-
-            <h3>3. Barèmes de Taxation (après abattement)</h3>
-            
-            <h4>En Ligne Directe (Parents/Enfants)</h4>
-            <table>
-                <tr><th>Part nette taxable</th><th>Taux</th></tr>
-                <tr><td>Jusqu'à 8 072 €</td><td>5 %</td></tr>
-                <tr><td>De 8 072 € à 12 109 €</td><td>10 %</td></tr>
-                <tr><td>De 12 109 € à 15 932 €</td><td>15 %</td></tr>
-                <tr><td>De 15 932 € à 552 324 €</td><td>20 %</td></tr>
-                <tr><td>De 552 324 € à 902 838 €</td><td>30 %</td></tr>
-                <tr><td>De 902 838 € à 1 805 677 €</td><td>40 %</td></tr>
-                <tr><td>Au-delà</td><td>45 %</td></tr>
-            </table>
-
-            <h4>Entre Frères et Sœurs</h4>
-            <table>
-                <tr><th>Part nette taxable</th><th>Taux</th></tr>
-                <tr><td>Moins de 24 430 €</td><td>35 %</td></tr>
-                <tr><td>Plus de 24 430 €</td><td>45 %</td></tr>
-            </table>
-
-            <h4>Autres</h4>
-            <ul>
-                <li>Parents jusqu'au 4e degré (Oncles, cousins...) : 55 %</li>
-                <li>Tiers et parents au-delà du 4e degré (Concubins...) : 60 %</li>
-            </ul>
-
-            <h3>4. Évaluation</h3>
-            <p>Valeur vénale au jour du décès. Abattement de 20% sur la résidence principale si occupée par le conjoint/partenaire ou enfants.</p>
-        </section>
+        </div>
 
     </div>
 
     <footer>
-        <div class="warning-legal">
-            <h4>Avertissement / Non-responsabilité</h4>
-            <p>Les documents présentés sont destinés à votre information. Ils ne constituent pas une consultation juridique et ne sauraient engager la responsabilité de l'auteur. L'auteur s'efforce de présenter le droit des successions complexe de manière simplifiée.</p>
-            <p>Les consultations gratuites sont interdites par le Barreau si elles ne sont pas anonymes. Si vous souhaitez une étude adaptée, nous vous invitons à recourir à une consultation juridique classique en cabinet.</p>
+        <div class="contact-card">
+            <h3 style="color:var(--royal-red); margin-top:0;">Maître Magali GIBERT</h3>
+            <p><strong>Avocat à la Cour</strong></p>
+            <p>60-62 avenue Henri-Martin, 75116 Paris</p>
+            <p>Tél. [cite_start]01 40 20 [Voir PDF] | gibertm@gmail.com [cite: 36-48]</p>
+        </div>
+
+        <div class="disclaimer">
+            <h4 style="color: #999;">AVERTISSEMENT / NON-RESPONSABILITÉ</h4>
+            <p>Les documents présentés sont destinés à votre information et ne constituent pas une consultation juridique. L'auteur s'efforce de présenter le droit des successions de manière simplifiée. Les consultations gratuites sont interdites par le Barreau si elles ne sont pas anonymes. [cite_start]Pour une étude adaptée, veuillez recourir à une consultation en cabinet [cite: 2371-2378].</p>
         </div>
         
         <p>© 1999-2019 - Magali GIBERT - Association Droit pour Tous - Tous droits réservés.</p>
-        <p>Reproduction interdite sans le consentement de l'auteur.</p>
+        <p>Reproduction interdite sans consentement.</p>
+        <p><a href="#intro" style="color:var(--royal-red); text-decoration:none;">Retour Haut de Page</a></p>
     </footer>
+
+    <script>
+        // Gestion des capsules (Accordéon)
+        const capsules = document.querySelectorAll('.capsule');
+
+        capsules.forEach(capsule => {
+            const header = capsule.querySelector('.capsule-header');
+            header.addEventListener('click', () => {
+                // Optionnel : Fermer les autres capsules
+                /*
+                capsules.forEach(c => {
+                    if (c !== capsule) {
+                        c.classList.remove('active');
+                        c.querySelector('.capsule-content').style.maxHeight = null;
+                        c.querySelector('.capsule-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+                */
+
+                // Toggle la capsule actuelle
+                capsule.classList.toggle('active');
+                const content = capsule.querySelector('.capsule-content');
+                if (capsule.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
