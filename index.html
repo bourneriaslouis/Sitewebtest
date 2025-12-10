@@ -6,13 +6,12 @@
     <title>Maître Magali GIBERT | Guide Expert Droit des Successions</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* --- CHARTE GRAPHIQUE "INSTITUTIONNEL & PREMIUM" --- */
+        /* --- CHARTE GRAPHIQUE INSTITUTIONNELLE --- */
         :root {
-            --royal-red: #800020;    /* Rouge Bordeau Profond (Robe avocat / Palais) */
-            --bright-red: #a30029;   /* Rouge plus vif pour interactivité */
-            --gold: #D4AF37;         /* Doré pour le prestige */
+            --royal-red: #800020;    /* Rouge Bordeau Profond */
+            --gold: #D4AF37;         /* Doré */
             --dark-slate: #1a1a1a;   /* Noir doux */
-            --off-white: #fcfcfc;    /* Fond papier */
+            --off-white: #fcfcfc;
             --light-gray: #f4f4f4;
         }
 
@@ -33,12 +32,12 @@
             margin-top: 0;
         }
 
-        /* --- NAVIGATION FLOTTANTE --- */
+        /* --- NAVIGATION --- */
         nav {
             position: sticky;
             top: 0;
             background: rgba(255, 255, 255, 0.98);
-            padding: 1rem 3rem;
+            padding: 1rem 2rem;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             display: flex;
@@ -58,12 +57,9 @@
         }
         .brand span { font-size: 0.7rem; color: var(--gold); letter-spacing: 1px; margin-top: -3px; }
 
-        .nav-actions {
-            display: flex;
-            gap: 1rem; /* Espace entre les deux boutons */
-        }
+        .nav-actions { display: flex; gap: 1rem; }
 
-        .nav-cta {
+        .nav-btn {
             background-color: var(--royal-red);
             color: white;
             padding: 0.8rem 1.5rem;
@@ -75,25 +71,9 @@
             transition: all 0.3s;
             border: 1px solid var(--royal-red);
         }
-        .nav-cta:hover { background-color: transparent; color: var(--royal-red); }
-        
-        /* Style spécifique pour le bouton secondaire (Médias) pour le distinguer légèrement ou identique */
-        .nav-cta-outline {
-            background-color: transparent;
-            color: var(--royal-red);
-            border: 1px solid var(--royal-red);
-            padding: 0.8rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .nav-cta-outline:hover { background-color: var(--royal-red); color: white; }
+        .nav-btn:hover { background-color: white; color: var(--royal-red); }
 
-
-        /* --- HERO SECTION (IMPACT) --- */
+        /* --- HERO SECTION --- */
         header {
             position: relative;
             height: 90vh;
@@ -108,33 +88,12 @@
             color: white;
         }
 
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
+        .hero-content { max-width: 900px; padding: 2rem; animation: fadeIn 1.5s ease-out; }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 1.5rem; color: white; line-height: 1.1; }
+        .hero-content p { font-size: 1.4rem; font-weight: 300; margin-bottom: 3rem; background: rgba(0,0,0,0.4); padding: 1rem; border-left: 4px solid var(--gold); }
 
-        .hero-content h1 {
-            color: white;
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
-            border-left: 4px solid var(--gold);
-            padding-left: 20px;
-            display: inline-block;
-            text-align: left;
-            background: rgba(0,0,0,0.3);
-            padding: 1rem;
-        }
-
-        /* LE BOUTON "CONNAÎTRE MES DROITS" */
-        .btn-gold-pulse {
+        /* BOUTON ACTION */
+        .btn-pulse {
             background-color: var(--gold);
             color: var(--dark-slate);
             padding: 1.5rem 4rem;
@@ -144,43 +103,19 @@
             letter-spacing: 2px;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
             animation: pulse 2s infinite;
-            transition: transform 0.3s;
-            border: none;
-            cursor: pointer;
+            border: none; cursor: pointer;
         }
-        .btn-gold-pulse:hover { transform: translateY(-5px); background-color: #e5c156; }
+        .btn-pulse:hover { transform: translateY(-5px); background-color: #e5c156; }
 
-        /* --- INTRO SECTION --- */
-        .intro {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: white;
-        }
-        .intro p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.2rem; color: #555; }
-        .quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--royal-red);
-            margin: 3rem auto;
-            max-width: 900px;
-        }
-
-        /* --- CAPSULES / ACCORDÉONS --- */
+        /* --- CONTENU --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-
-        .section-block { margin-bottom: 6rem; }
         
-        .section-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 { font-size: 3rem; margin: 0; margin-right: 2rem; opacity: 0.15; position: absolute; z-index: 0; }
+        .section-title { display: flex; align-items: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 3rem; margin: 0; opacity: 0.15; position: absolute; z-index: 0; }
         .section-title h3 { font-size: 2.5rem; margin: 0; z-index: 1; position: relative; padding-left: 2rem; border-left: 5px solid var(--royal-red); }
 
-        /* Style des capsules */
+        /* CAPSULES (ACCORDÉONS) */
         .capsule {
             background: white;
             margin-bottom: 1.5rem;
@@ -190,19 +125,17 @@
             transition: all 0.3s;
             border-left: 4px solid transparent;
         }
-
         .capsule:hover { transform: translateX(10px); border-left-color: var(--gold); }
 
         .capsule-header {
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: white;
         }
-
-        .capsule-header h4 { margin: 0; font-size: 1.3rem; color: var(--dark-slate); font-weight: 600; font-family: 'Montserrat', sans-serif; }
+        .capsule-header h4 { margin: 0; font-size: 1.2rem; color: var(--dark-slate); font-weight: 600; }
         .capsule-icon { font-size: 1.5rem; color: var(--royal-red); transition: transform 0.3s; }
 
         .capsule-content {
@@ -215,114 +148,36 @@
             font-size: 0.95rem;
             text-align: justify;
         }
-
-        .capsule.active .capsule-content {
-            padding: 2rem;
-            opacity: 1;
-            border-top: 1px solid #eee;
-        }
+        .capsule.active .capsule-content { padding: 2rem; opacity: 1; border-top: 1px solid #eee; }
         .capsule.active .capsule-icon { transform: rotate(45deg); }
         .capsule.active .capsule-header h4 { color: var(--royal-red); }
 
-        /* --- ELEMENTS DE TEXTE SPÉCIFIQUES --- */
-        .legal-box { background: #fff5f5; padding: 1.5rem; border-left: 3px solid var(--royal-red); margin: 1.5rem 0; font-style: italic; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.8rem; }
+        /* ELEMENTS TEXTUELS */
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
         table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; font-size: 0.9rem; }
         th { background: var(--royal-red); color: white; padding: 1rem; text-align: left; }
         td { border: 1px solid #ddd; padding: 1rem; }
         tr:nth-child(even) { background: #f9f9f9; }
 
-        /* --- PUBLICATIONS & MEDIAS (NOUVEAU) --- */
-        .media-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-        @media (min-width: 768px) {
-            .media-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            height: 0;
-            overflow: hidden;
-            background: #000;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .article-list {
-            list-style: none;
-            padding: 0;
-        }
-        .article-item {
-            background: white;
-            border: 1px solid #eee;
-            margin-bottom: 1rem;
-            transition: all 0.3s;
-            border-left: 3px solid var(--gold);
-        }
-        .article-item:hover {
-            transform: translateX(5px);
-            border-left-color: var(--royal-red);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .article-link {
-            display: block;
-            padding: 1.5rem;
-            text-decoration: none;
-            color: var(--dark-slate);
-        }
-        .article-meta {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .article-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--royal-red);
-            font-weight: 700;
-        }
-
-        /* --- CONTACT & FOOTER --- */
-        .contact-section {
-            background-color: var(--royal-red);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .contact-card {
-            background: white;
-            color: var(--dark-slate);
-            max-width: 500px;
-            margin: -100px auto 0;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 10;
-        }
+        /* MEDIA SECTION */
+        .media-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+        @media (min-width: 768px) { .media-grid { grid-template-columns: 1fr 1fr; } }
         
-        .footer-legal {
-            background: #111;
-            color: #666;
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-            font-size: 0.8rem;
+        .video-box { background: #000; height: 300px; display: flex; align-items: center; justify-content: center; color: white; }
+        .article-list { list-style: none; padding: 0; }
+        .article-item { border-bottom: 1px solid #eee; padding: 1rem 0; }
+        .article-item a { text-decoration: none; color: var(--dark-slate); font-weight: 600; display: block; }
+        .article-item a:hover { color: var(--royal-red); }
+
+        /* FOOTER */
+        footer { background: #111; color: #888; padding: 4rem 2rem; text-align: center; }
+        .contact-card {
+            background: white; color: var(--dark-slate); max-width: 500px;
+            margin: -100px auto 3rem; padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative;
         }
-        .disclaimer { border: 1px solid #333; padding: 2rem; margin-bottom: 2rem; max-width: 800px; margin: 0 auto 2rem; }
+        .disclaimer { border: 1px solid #333; padding: 2rem; margin: 2rem auto; max-width: 800px; font-size: 0.85rem; }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
@@ -330,14 +185,6 @@
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .section-title h2 { display: none; }
-            .section-title h3 { border: none; padding: 0; }
-            .nav-actions { display: none; } /* En mobile il faudrait un menu burger, ici caché pour simplicité */
-        }
     </style>
 </head>
 <body>
@@ -347,10 +194,9 @@
             Maître Magali GIBERT
             <span>Avocat à la Cour - Paris</span>
         </div>
-        
         <div class="nav-actions">
-            <a href="#dossiers" class="nav-cta">Guide Juridique</a>
-            <a href="#publications" class="nav-cta-outline">Médias</a>
+            <a href="#guide" class="nav-btn">Guide Juridique</a>
+            <a href="#medias" class="nav-btn" style="background: white; color: var(--royal-red);">Publications & Médias</a>
         </div>
     </nav>
 
@@ -358,285 +204,285 @@
         <div class="hero-content">
             <h1>Maître de votre Succession</h1>
             <p>Connaître les règles gouvernant le règlement des successions en France permet d'organiser en connaissance de cause la répartition de ses biens après son décès.</p>
-            
-            <a href="#dossiers" class="btn-gold-pulse">Connaître mes droits</a>
+            <a href="#guide" class="btn-pulse">Connaître mes droits</a>
         </div>
     </header>
 
-    <section class="intro">
-        <div class="container">
-            <div class="quote">
-                "Ne rien faire, c'est laisser le code civil organiser votre succession à votre place."
+    <section class="container">
+        <div class="capsule active">
+            <div class="capsule-header"><h4>Présentation</h4><span class="capsule-icon">-</span></div>
+            <div class="capsule-content" style="max-height: 1000px; opacity: 1; padding: 2rem;">
+                <p>Ne rien faire, c'est laisser le code civil organiser votre succession à votre place. Or ce que le code décide, n'est pas forcément conforme à ce que vous croyez.</p>
+                <p><strong>Deux solutions s'offrent à vous :</strong></p>
+                <ul>
+                    <li><strong>I. Ne rien faire :</strong> c'est la succession légale ou ab intestat (sans testament). Le code civil prévoit alors les règles qui seront applicables. La succession est donc qualifiée de légale. Ces règles s'appliquent à toutes les successions où aucun testament n'a été fait.</li>
+                    <li><strong>II. Prévoir et organiser</strong> la répartition de vos biens :
+                        <ul>
+                            <li>1. Répartir votre patrimoine (testament, donation...)</li>
+                            <li>2. Protéger votre conjoint (époux)</li>
+                            <li>3. Protéger votre concubin(e) / pacsé(e)</li>
+                            <li>4. L'assurance-vie</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Successions en Europe :</strong> A l'international nous vous conseillons de vous rapprocher dans chaque pays des spécialistes concernés. Toutefois afin de vous aider dans vos démarches nous vous conseillons d'aller faire un tour sur le site de l'union européenne : successions en Europe. Nota, le site contient : la réforme du droit des successions et des libéralités du 13 juin 2006 (applicable en principe depuis le 1e janvier 2007).</p>
             </div>
-            <p>Or ce que le code décide n'est pas forcément conforme à ce que vous croyez. Deux solutions s'offrent à vous : subir la loi (succession légale) ou organiser votre transmission.</p>
-            <p style="font-size: 0.9rem; color: #888; margin-top: 2rem;">
-                <em>Note : Pour les successions internationales, nous vous conseillons de consulter le site de l'Union Européenne.</em>
-            </p>
         </div>
     </section>
 
-    <div id="dossiers" class="container">
+    <div id="guide" class="container">
 
         <div class="section-block">
-            <div class="section-title">
-                <h2>I</h2>
-                <h3>Les Notions Fondamentales</h3>
-            </div>
+            <div class="section-title"><h2>I</h2><h3>Les Notions</h3></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Comment se fait la répartition ? (Ordres & Degrés)</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>La répartition selon le code civil se fait par ordre des héritiers et par degré de parenté.</p>
-                    <p><strong>L'Ordre Successoral :</strong> Il s'agit d'un groupe de personnes habiles à se porter héritiers. Chaque ordre appelé à hériter exclut les personnes figurant dans l'ordre suivant.</p>
-                    <ul>
-                        <li><strong>1er Ordre :</strong> Descendants (Enfants, petits-enfants...).</li>
-                        <li><strong>2ème Ordre :</strong> Privilégiés (Père/Mère + Frères/Sœurs).</li>
-                        <li><strong>3ème Ordre :</strong> Ascendants ordinaires (Grands-parents).</li>
-                        <li><strong>4ème Ordre :</strong> Collatéraux ordinaires (Oncles, cousins jusqu'au 6e degré).</li>
-                    </ul>
-                    <p><strong>Le Degré :</strong> Dans un même ordre, le degré le plus proche prime. En ligne directe, on compte les générations (Père/Fils = 1 degré). En ligne collatérale, on remonte à l'ancêtre commun.</p>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>1. Répartition de la succession en l'absence de testament</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>La répartition selon le code civil se fait par ordre des héritiers et par degré de parenté. Ce qui signifie qu'on vérifie d'abord qu'il n'existe aucune personne dans un ordre avant de passer à l'ordre suivant.</p>
+                <p>Dans un même ordre, le degré de parenté le plus proche prime le degré suivant. A degré de parenté égal la répartition se fait par tête.</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Mécanismes Spéciaux : Fente & Représentation</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p><strong>La Fente :</strong> Mécanisme qui permet de répartir la succession en deux parties égales entre la ligne paternelle et la ligne maternelle (dans les 3e et 4e ordres).</p>
-                    <p><strong>La Représentation :</strong> Fiction juridique restaurant l'ordre logique des décès. Des héritiers viennent à la place d'un ascendant décédé. Exemple : Si vous décédez avant votre père, vos enfants prennent votre place dans sa succession.</p>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>2. Qu'est-ce qu'un ordre successoral ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Il s'agit d'un groupe de personnes habiles à se porter héritiers d'une autre. Ce groupe est déterminé en fonction des liens familiaux avec le défunt. Il existe 5 ordres de successibles, chaque ordre appelé à hériter exclu les personnes figurant dans l'ordre suivant.</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Réserve & Quotité Disponible</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <div class="legal-box">
-                        <strong>Héritier Réservataire :</strong> Personne que vous ne pouvez pas déshériter. Une fraction du patrimoine lui est réservée par la loi.
-                    </div>
-                    <p>Sont réservataires : Les descendants et à défaut, le conjoint survivant. Les ascendants ne le sont plus depuis 2008.</p>
-                    <p><strong>Quotité Disponible :</strong> Fraction dont vous pouvez disposer librement.</p>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>3. Quel est l'ordre des successibles ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Depuis le 1e juillet 2002 : le conjoint survivant passe avant les frères et soeurs.</p>
+                <ul>
+                    <li><strong>1er Ordre : Descendants</strong> (degré : 1er enfants, 2e petits-enfants, 3e arrières-petits-enfants)</li>
+                    <li><strong>2ème Ordre : Ascendants privilégiés</strong> (pères et mères) <strong>et Collatéraux privilégiés</strong> (frères et soeurs, et leurs descendants : neveux, nièces et petits-neveux, petites nièces).</li>
+                    <li><strong>3ème Ordre : Ascendants ordinaires</strong> - tous - (degré : 2e grands-parents, 3e arrières-grands-parents).</li>
+                    <li><strong>4ème Ordre : Collatéraux ordinaires</strong> : tous les autres parents jusqu'au 6e degré dans chaque branche (degré : 3e oncles et tantes, 4e cousins germains, 5e grands-oncles, grandes-tantes...).</li>
+                    <li><strong>5ème Ordre : Etat.</strong></li>
+                </ul>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>4. A quoi servent les degrés de parenté ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Ils servent à déterminer si une personne peut être appelée à la succession d'une autre. A moins que le défunt soit un mineur de -16 ans ou un incapable, la dévolution (transmission) s'arrête au 6e degré de parenté. En ce qui concerne les incapables, il est possible de leur succéder jusqu'au 12e degré.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>5. Comment calculer les degrés de parenté ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>En ligne directe (ascendants / descendants) : le degré se calcule en comptant le nombre de générations séparant le défunt de la personne appelée à sa succession. Ainsi entre un père et un fils il y a 1 degré, entre un grand-père et son petit-fils 2 degrés et ainsi de suite.</p>
+                <p>En ligne collatérale, il faut compter le nombre de personne séparant le défunt de la personne en remontant à l'ascendant commun. Ainsi un frère et une soeur sont séparés par 2 degrés. Un oncle et son neveu sont séparés par 3 degrés. Des cousins germains sont séparés par 4 degrés...</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>6. Lignes et Branches</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Il s'agit de tous les membres de votre famille reliés à vous par un de vos parents, c'est pourquoi on parle de ligne ou branche paternelle ou maternelle.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>7. Qu'est ce que la fente ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>La fente est un mécanisme juridique qui permet de répartir la succession en deux parties, l'une pour la ligne paternelle et l'autre pour la ligne maternelle. La fente s'effectue toujours dans les 3e ordre (ascendants) et 4e ordre (collatéraux ordinaires).</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>8. Qu'est ce que la représentation ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>C'est une dérogation à la règle selon laquelle dans un même ordre le degré de parenté le plus proche exclu le degré suivant. La représentation est une fiction juridique qui a vocation à restaurer l'ordre logique des décès (Des héritiers du défunt viennent à sa succession à la place d'un de leurs ascendants décédé antérieurement).</p>
+                <p>On dit alors que la répartition se fait par souche et non plus par tête. On parle de souche lorsque la succession d'un ascendant se répartit en fonction du nombre d'enfants vivants ou représentés.</p>
+                <p>Ainsi, si vous avez un frère et que vous décédez avant votre père, vos enfants à son décès prendront la part qui aurait dû vous revenir dans sa succession. Vos enfants recueilleront donc la 1/2 de l'actif successoral et votre frère prendra l'autre 1/2.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>9. Filiations légitime et naturelle</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Non depuis 1972 il n'existe plus aucune différence entre les filiations légitimes, adoptives ou les filiations naturelles, en ce qui concerne les vocations successorales. Depuis la loi du 3 déc. 2001, la loi ne distingue plus entre les enfants légitimes et les enfants adultérins (dont l'auteur se trouvait au moment de leur conception dans les liens du mariage). Désormais, les enfants adultérins sont dotés des même droits que les enfants légitimes (applicable à toutes successions encore ouvertes même celles ouvertes avant la nouvelle loi).</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>10. Qu'est-ce qu'un héritier réservataire ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Il s'agit d'une personne que vous ne pouvez pas déshériter. Une fraction de votre patrimoine, lui est réservée par la loi : la réserve. Toute disposition contraire sera annulée. La réserve doit être transmise libre de toute charge. Les héritiers réservataires sont vos descendants et à défaut, le conjoint survivant.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>11. Qu'est-ce que la quotité disponible ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Il s'agit de la fraction de votre patrimoine dont vous pouvez disposer librement et attribuer à la personne de votre choix. La quotité disponible (QD) s'oppose à la réserve.</p>
+            </div></div>
         </div>
 
         <div class="section-block">
-            <div class="section-title">
-                <h2>II</h2>
-                <h3>La Succession Légale (Sans Testament)</h3>
-            </div>
+            <div class="section-title"><h2>II</h2><h3>La Succession Légale (Ab Intestat)</h3></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Qui hérite si je ne fais rien ?</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Le Code Civil décide à votre place. Tout dépend de votre situation familiale.</p>
-                    <ul>
-                        <li><strong>Si vous avez des enfants :</strong> Ils excluent les autres ordres.</li>
-                        <li><strong>Sans enfants, avec conjoint :</strong> Le conjoint reçoit la moitié (si 2 parents vivants) ou les 3/4 (si 1 parent). Si aucun parent, le conjoint prend tout.</li>
-                        <li><strong>Sans conjoint, sans enfants :</strong> Vos parents prennent 1/4 chacun, le reste pour les frères et sœurs.</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>1. Je n'ai pas fait de testament, qui hérite de mes biens ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Tout dépend de votre situation familiale. Le code civil instaure un ordre de transmission de vos biens (dévolution) par ordre des héritiers et par degré de parenté. Ce qui signifie qu'on vérifie s'il existe des héritiers dans le 1er ordre avant de passer au 2e ordre et ainsi de suite. Dans chaque ordre la succession est dévolue au degré de parenté le plus proche, et à degré égal, la répartition se fait généralement par tête (par personne). Ainsi s'il existe un descendant (1e ordre) au 3e degré de parenté (arrière-petit-fils du défunt), la succession lui sera dévolue (transmise) même s'il existe un collatéral privilégié (2e ordre) au 2e degré de parenté (frère du défunt).</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Les Droits du Conjoint Survivant</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Le conjoint occupe une place particulière. En présence d'enfants communs, il a le choix entre l'usufruit de la totalité ou 1/4 en propriété. Si enfants d'un autre lit, il n'a que le 1/4 en propriété.</p>
-                    <p><strong>Droit au logement :</strong> Il a droit à la jouissance gratuite du logement pendant 1 an (droit temporaire) et peut demander un droit d'usage viager.</p>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>2. Si je meurs avant mes parents, mes enfants seront-il appelés à leurs successions ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Oui. Soit vous êtes enfant unique, et vos enfants seront appelés à la succession en qualité de descendants au degré de parenté le plus proche. Soit vous avez des frères et soeurs et vos enfants seront appelés à la succession en même temps que leurs oncles et tantes par représentation.</p>
+                <p>Vos enfants vont donc gagner un degré et prendre votre place dans la succession de vos parents. Ils ne pourront cependant recevoir que ce que vous auriez vous-même reçu, si vous n'étiez pas pré-décédé. Ils se partageront donc vos droits dans la succession de vos auteurs.</p>
+                <p>La représentation est une dérogation à la règle selon laquelle dans un même ordre, le degré de parenté le plus proche exclu le degré suivant. La représentation est une fiction juridique qui a vocation à restaurer l'ordre logique des décès. On dit alors que la répartition se fait par souche et non plus par tête. Ainsi si vous avez 2 enfants et que vous avez un frère: vos enfants recevront donc 1/4 chacun dans la succession de vos parents, c'est à dire votre part (la 1/2) divisée par le nombre de vos enfants et votre frère recevra l'autre 1/2. La représentation n'existe que dans le 1e et le 2e ordre car elle a pour unique vocation de restaurer l'ordre normal des décès quand l'application des règles du code civil créerait de choquantes inégalités.</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Accepter ou Refuser la succession ?</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Nul n'est tenu d'accepter. Vous avez trois choix :</p>
-                    <ol>
-                        <li><strong>Acceptation pure et simple :</strong> Confusion des patrimoines. Vous payez les dettes indéfiniment. Attention aux actes tacites (vente de meubles).</li>
-                        <li><strong>Acceptation à concurrence de l'actif net :</strong> Vous ne payez les dettes qu'à hauteur de l'héritage. Nécessite un inventaire.</li>
-                        <li><strong>Renonciation :</strong> Vous ne recevez rien et ne payez rien.</li>
-                    </ol>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>3. Si mon frère et moi décédons avant un de nos parents, comment se répartira sa succession ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Là encore, tout va dépendre si vous avez laissé ou non des descendants, si tel est le cas la succession de vos parents se fera par souche et non par tête, afin de recréer ce qui se serait passé dans vos patrimoines respectifs si l'ordre normal des décès avait été respecté.</p>
+                <p>Ainsi si vous avez eu 2 enfants et votre frère 1 seul, vos enfants se répartiront la part qui aurait dû vous revenir (la 1/2) soit 1/4 pour chacun et l'enfant de votre frère prendra la part qui lui serait revenu dans la succession de vos parents, soit l'autre 1/2. On parle de souche lorsque la succession d'un ascendant se répartit en fonction du nombre d'enfants vivants ou représentés.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>4. Je n'ai pas d'enfant, qui hérite de mes biens ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Il convient de distinguer selon que vous laissez ou non un conjoint survivant.</p>
+                <p><strong>4.1. En présence d'un conjoint survivant</strong></p>
+                <p>Le conjoint survivant recevra la 1/2 de la succession et chacun des ascendants privilégiés (père et mère) a vocation à recueillir 1/4 de votre succession en pleine propriété. Ainsi, si vous laissez vos père et mère, chacun d'entre eux recueillera 1/4 et votre conjoint recueillera la 1/2 de votre succession en pleine propriété.</p>
+                <p>Si vous ne laissez qu'un seul ascendant privilégié, ce dernier recueillera un 1/4 de votre succession et votre conjoint en recueillera les 3/4. En l'absence d'ascendants privilégiés, votre conjoint survivant héritera de la totalité de la succession.</p>
+                <p>Les collatéraux privilégiés (vos frères et soeurs ou leurs descendants) bénéficieront seulement d'un droit de retour légal sur la moitié des "biens de famille" (ceux que vous avez reçu de vos ascendants décédés, par succession ou donation, et qui se retrouvent en nature dans la succession), l'autre moitié revenant à votre conjoint survivant. Toutefois, vos ascendants autres que vos père et mère, qui sont dans le besoin pourront réclamer une créance d'aliments contre la succession.</p>
+                <p><strong>4.2. En l'absence de conjoint survivant</strong></p>
+                <p>Les ascendants et collatéraux privilégiés (2e ordre) sont alors appelés à la succession. Ce qui signifie que, chacun de vos parents hérite d'1/4 de vos biens et vos frères et soeurs ou leur descendant se partageront l'autre 1/2 de votre patrimoine. S'il ne vous reste qu'un seul parent, ce dernier recevra 1/4 et les collatéraux privilégiés 3/4. En l'absence d'ascendants privilégiés : vos frères et soeurs (ou leurs descendants) recueilleront la totalité de votre patrimoine. Vos père et mère pourront exercer un droit de retour légal, à hauteur d'1/4 de votre patrimoine chacun, sur les biens qu'ils vous avaient transmis par donation. La valeur des biens soumis au droit de retour s'imputera alors en priorité sur leurs droits successoraux.</p>
+                <p>Si vous n'avez pas de frères et soeurs ni de neveux ou nièces, la succession sera partagée par branche, soit une 1/2 pour la ligne maternelle et l'autre moitié pour la ligne paternelle, à raison. Seront d'abord appelés les ascendants privilégiés et/ou ordinaires (3e ordre), et à défaut, les collatéraux ordinaires (4e ordre). Dans chaque branche le degré de parenté le plus proche hérite. Ainsi des cousins au 4e degré peuvent être appelés dans la ligne paternelle, alors que seul un cousin au 6e degré est présent dans la branche maternelle. Chaque branche recueille la 1/2 du patrimoine du défunt et les héritiers au degré le plus proche se répartissent les biens par tête.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>5. Et mon conjoint quels sont ses droits ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>En l'absence de descendants, le conjoint survivant devient un héritier réservataire pour 1/4 de la succession.</p>
+                <p><strong>En présence d'enfants communs :</strong> Le conjoint a le choix entre l'usufruit de la totalité des biens OU la propriété du quart des biens.</p>
+                <p><strong>En présence d'enfants d'un autre lit :</strong> Le conjoint perd son droit d'option et ne reçoit que la propriété du quart des biens.</p>
+                <p><strong>En l'absence d'enfants mais avec présence des parents :</strong> Le conjoint reçoit la moitié des biens (si les deux parents sont vivants) ou les trois-quarts (si un seul parent est vivant).</p>
+                <p><strong>En l'absence d'enfants et de parents :</strong> Le conjoint hérite de la totalité.</p>
+                <p><strong>Droit au logement :</strong> Reconnaissance d'un droit au logement (depuis le 1e juillet 2002) : Le conjoint dispose du droit à la jouissance gratuite, durant 1 an, du logement occupé à titre de résidence principale, ainsi que des meubles qui le garnissent. Si le logement est loué la succession devra rembourser au conjoint survivant les loyers payés. Le conjoint peut demander à bénéficier de droits viagers d'habitation et d'usage sur le logement principal et sur ses meubles. Cette rente viagère s'impute sur la valeur des droits successoraux recueillis par le conjoint.</p>
+                <p><strong>Droit à pension :</strong> Le conjoint survivant dans le besoin dispose d'un droit à pension alimentaire, supporté par tous les héritiers (pension non soumise aux droits de succession).</p>
+                <p>Si vous êtes marié sous le régime légal (communauté réduite aux acquêts), le conjoint reçoit la 1/2 du patrimoine commun plus 1/4 ou la 1/2 de vos biens en usufruit. Mais, si vous êtes mariés sous un régime de séparation de biens ou de participation aux acquêts votre conjoint n'aura que les droits visés plus haut.</p>
+                <p>L'usufruit dont votre conjoint peut disposer ne peut s'exercer sur les biens légués ou donnés.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>6. Existe-t-il une différence entre les filiations légitime et naturelle ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Non, depuis 1972 il n'existe plus aucune différence entre les filiations légitimes, adoptives ou les filiations naturelles, en ce qui concerne les vocations successorales. Depuis la loi du 3 déc. 2001, la loi ne distingue plus entre les enfants légitimes et les enfants adultérins. Désormais, les enfants adultérins sont dotés des même droits que les enfants légitimes.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>7. Quelles sont les conséquences de l'acceptation d'une succession ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>L'acceptation d'une succession, si elle est pure et simple, emporte la confusion de votre patrimoine avec celui du défunt. Ce qui signifie que votre actif s'accroît de l'actif successoral, mais également que votre passif est augmenté du passif du défunt. Vous êtes donc indéfiniment tenu des dettes du défunt sur votre propre patrimoine, même si les dettes excèdent l'actif successoral.</p>
+                <p>L'option doit être exercée dans les 4 mois qui suivent l'ouverture de la succession. Si vous avez accepté une succession, vous ne pouvez plus y renoncer par la suite. Vous devez donc être très vigilant avant de faire un acte d'héritier sur le patrimoine du défunt. En effet, ce type d'acte implique une acceptation tacite de la succession (vente d'objets, donner congé à un locataire, appréhender des biens...).</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>8. Suis-je obligé d'accepter une succession ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Non.</p>
+                <p><strong>- La renonciation :</strong> En contrepartie de l'obligation indéfinie aux dettes du défunt, le code civil vous laisse toujours la possibilité de renoncer à une succession (vous ne recevrez rien et vous ne devrez rien payer). Pour cela vous devez faire une déclaration au greffe du Tribunal de Grande Instance du lieu d'ouverture de la succession dans les 4 mois du décès.</p>
+                <p><strong>- L'acceptation à concurrence de l'actif net</strong> (anciennement sous bénéfice d'inventaire) : Vous pouvez également accepter à concurrence de l'actif net, si vous avez des doutes sur l'étendue des dettes du défunt. Vous acceptez alors la succession, mais vous ne serez tenu des dettes du défunt que dans la limite de l'actif successoral. Vous devez faire une déclaration en ce sens au greffe du Tribunal de Grande Instance du lieu d'ouverture de la succession dans le délai de 4 mois à compter de l'ouverture de la succession. Vous aurez alors 2 mois à compter de cette déclaration pour déposer au Tribunal l'inventaire de la succession. Toutefois, comme toute acceptation, l'acceptation sous bénéfice d'inventaire est irrévocable, vous ne pouvez plus renoncer à la succession, mais vous pouvez abandonner les actifs aux créanciers de la succession.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>9. Qu'y a-t-il dans la succession ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>La succession se compose de : l'actif propre du défunt, le passif propre du défunt, la valeur des donations simples faites par le défunt, sa part de communauté si le défunt était marié sous un régime communautaire.</p>
+                <p>Attention aux clauses du contrat de mariage qui peuvent faire en sorte que l'actif commun soit intégralement attribué au survivant, ou que la totalité du patrimoine propre soit apporté à la communauté. La combinaison de ces deux clauses revient à attribuer l'intégralité de l'actif du défunt au survivant, ce qui réduit l'actif successoral à rien.</p>
+            </div></div>
         </div>
 
         <div class="section-block">
-            <div class="section-title">
-                <h2>III</h2>
-                <h3>Organiser sa Succession</h3>
-            </div>
+            <div class="section-title"><h2>III</h2><h3>Prévoir et Organiser la répartition</h3></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>1. La Réserve Héréditaire (Le calcul)</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Vous ne pouvez disposer librement que de la "Quotité Disponible" :</p>
-                    <table>
-                        <tr><th>Enfants</th><th>Réserve (Intouchable)</th><th>Quotité Disponible</th></tr>
-                        <tr><td>1 enfant</td><td>1/2</td><td>1/2</td></tr>
-                        <tr><td>2 enfants</td><td>2/3</td><td>1/3</td></tr>
-                        <tr><td>3 enfants et +</td><td>3/4</td><td>1/4</td></tr>
-                    </table>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>1. Répartir votre patrimoine</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Pour préparer votre succession vous devez connaître ce qui vous est possible de faire. Attention vous devez respecter la réserve héréditaire.</p>
+                <p><strong>1.1. Qui sont les héritiers réservataires ?</strong> Depuis le 1e janvier 2008: les ascendants ne sont plus des héritiers réservataires. Les héritiers réservataires sont les descendants et à défaut, le conjoint survivant. Il s'agit des personnes que vous ne pouvez pas déshériter. Une fraction de votre patrimoine, leur est réservée par la loi: la Réserve. Toute disposition contraire sera annulée. La réserve doit être transmise libre de toute charge. La seule possibilité qui vous est offerte est de réduire la part qui doit leur revenir dans votre succession en disposant de la Quotité Disponible 'ordinaire' en faveur d'un tiers.</p>
+                <p><strong>1.2. Comment se calcule la réserve héréditaire ?</strong></p>
+                <table>
+                    <tr><th>Nombre d'enfants</th><th>Réserve</th><th>Quotité Disponible (QD)</th></tr>
+                    <tr><td>1 enfant</td><td>1/2</td><td>1/2</td></tr>
+                    <tr><td>2 enfants</td><td>2/3</td><td>1/3</td></tr>
+                    <tr><td>3 enfants et +</td><td>3/4</td><td>1/4</td></tr>
+                </table>
+                <p>A défaut de descendants, le conjoint survivant bénéficie d'une réserve d'1/4, ce qui laisse une quotité disponible de 3/4. Il existe par ailleurs une quotité disponible 'spéciale entre époux'.</p>
+                <p><strong>1.3. Sur quoi se calcule la réserve héréditaire ?</strong> Pour pouvoir calculer la réserve héréditaire, il convient de reconstituer le patrimoine du défunt tel qu'il serait si aucune donation n'était intervenue. Il s'agit de l'actif du défunt moins son passif auquel on rajoute fictivement, la valeur actuelle de tous les biens donnés par le défunt au cours de son existence. Cette somme constitue la masse successorale sur laquelle on calcule la réserve et la quotité disponible. On appelle cette opération la reconstitution de la masse successorale.</p>
+                <p><strong>1.4. Comment transmettre son patrimoine ?</strong></p>
+                <p><strong>Transmettre après votre décès :</strong> Le testament est un acte unilatéral par lequel vous prévoyez la répartition de vos biens. Il est toujours révocable. Toutefois, si les legs prévus par votre testament excèdent la quotité disponible, ils seront réduits.</p>
+                <p><strong>Transmettre de votre vivant :</strong> La donation est un contrat par lequel le donateur se dépouille de son vivant, à titre définitif. Toute donation est irrévocable dès lors qu'elle est acceptée par le donataire. Les donations simples faites à un héritier sont soumises au rapport successoral (réévaluées au jour du décès).</p>
+                <p><strong>Le choix de la sécurité : La donation-partage.</strong> C'est un acte par lequel une personne répartit ses biens de son vivant entre tous ses présomptifs héritiers. Si tous vos héritiers y participent, l'évaluation des biens donnés se fait au jour de la donation, et elle ne peut plus être réévaluée par la suite. C'est sans doute le moyen le plus sûr de transmettre votre patrimoine.</p>
+                <p><strong>1.5. Quel type de donation choisir ?</strong></p>
+                <p><strong>Donner en avance sur l'héritage : La donation en avancement de part successorale.</strong> C'est une donation faite en avance sur ce qu'on doit recevoir dans la succession. Cette donation s'impute sur sa part de Réserve. Elle est rapportable à la succession (réévaluée).</p>
+                <p><strong>Donner pour avantager : La donation hors part successorale.</strong> Elle est faite pour avantager un héritier ou un tiers. Cette donation s'impute sur la Quotité Disponible. Si cette donation la dépasse, elle sera réduite.</p>
+                <p><strong>1.6. Comment réduit-on les libéralités ?</strong> Les legs sont réduits par priorité puis les donations en partant de la plus récente pour remonter à la plus ancienne.</p>
+                <p><strong>1.7. Suis-je obligé de recourir à un notaire ?</strong> Oui pour une donation ou testament authentique/mystique. Non pour un testament olographe (entièrement rédigé, daté et signé de la main du testateur).</p>
+                <p><strong>1.8. Les formalités de la succession testamentaire.</strong> Le légataire doit demander la délivrance de son legs aux héritiers. Si testament olographe, il faut l'envoi en possession (vérification par le juge).</p>
+                <p><strong>1.9. Mon père m'a fait une donation de son vivant, que se passe-t-il à son décès ?</strong> Tout dépend du type de donation (avancement de part ou hors part). Voir détails ci-dessus (imputation sur réserve ou quotité disponible et rapport).</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>2. Les Outils (Testament & Donations)</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <ul>
-                        <li><strong>Le Testament :</strong> Acte unilatéral révocable. Olographe (manuscrit) ou Authentique (notaire). Permet de léguer la quotité disponible.</li>
-                        <li><strong>La Donation :</strong> Acte irrévocable du vivant. Rapportable à la succession et réévaluée au jour du décès.</li>
-                        <li><strong>La Donation-Partage :</strong> Moyen le plus sûr. Figée au jour de la donation (pas de réévaluation).</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>2. Protéger votre conjoint (époux)</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p><strong>2.1. Ce qu'il faut savoir :</strong> En l'absence de descendants, le conjoint survivant devient un héritier réservataire pour 1/4 de la succession. Il bénéficie du droit au logement et à pension.</p>
+                <p><strong>2.2. Quelles dispositions puis-je prendre ?</strong> En présence de descendants, vous pouvez laisser à votre conjoint (Quotité Disponible Spéciale entre époux) : Soit la pleine propriété de la quotité disponible 'ordinaire', soit 1/4 en pleine propriété + 3/4 en usufruit, soit la totalité de vos biens en usufruit.</p>
+                <p><strong>2.3. Comment procéder ?</strong></p>
+                <p><strong>A. La donation :</strong> Acte authentique. La "donation au dernier vivant" (biens à venir) est librement révocable.</p>
+                <p><strong>B. Le testament :</strong> Doit respecter les formes. Testaments conjonctifs interdits.</p>
+                <p><strong>C. Changement de régime matrimonial :</strong> Adopter la communauté universelle avec attribution intégrale au survivant. Moyen le plus efficace mais irrévocable sans nouvelle procédure.</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>3. Protéger son Conjoint ou Partenaire</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p><strong>Conjoint Marié :</strong> La "Donation au dernier vivant" permet d'augmenter ses droits (usufruit total, ou quotité ordinaire + usufruit). On peut aussi aménager le régime matrimonial (Communauté universelle).</p>
-                    <div class="legal-box" style="border-color: var(--bright-red);">
-                        <strong>ATTENTION CONCUBINS / PACS :</strong><br>
-                        Le partenaire de PACS et le concubin ne sont PAS héritiers légaux. Sans testament, ils n'ont droit à RIEN.<br>
-                        Fiscalité : Le PACS est exonéré, mais le concubin est taxé à 60% !.
-                    </div>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>3. Protéger votre concubin(e) / pacsé(e)</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p><strong>3.1. Quels sont les droits ?</strong></p>
+                <p><strong>Pour le concubin :</strong> Etrangers l'un pour l'autre. Sans testament, il n'a droit à rien.</p>
+                <p><strong>Pour le PACS :</strong> Le PACS ne crée pas de droits héréditaires. Il faut un testament. Le partenaire est exonéré de droits de succession (depuis août 2007).</p>
+                <p><strong>3.2. Comment protéger du fisc ?</strong> Concubins taxés à 60% après abattement de 1 594 EUR. PACS exonérés.</p>
+                <p><strong>3.3. Comment transmettre le logement ?</strong> Clause de tontine (le bien revient au survivant, réputé n'avoir jamais appartenu au défunt, droits de mutation 4,80% si < 76 000€, sinon 60%). Pour le PACS, droit au logement temporaire identique au conjoint.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>4. L'assurance-vie</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>à venir</p>
+            </div></div>
         </div>
 
         <div class="section-block">
-            <div class="section-title">
-                <h2>IV</h2>
-                <h3>La Fiscalité</h3>
-            </div>
+            <div class="section-title"><h2>IV</h2><h3>Fiscalité des successions et donations</h3></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Abattements & Exonérations</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Depuis la loi TEPA (2007), le conjoint et le partenaire de PACS sont <strong>exonérés</strong> de droits de succession.</p>
-                    <p>Pour les autres, un abattement s'applique (renouvelable tous les 15 ans) :</p>
-                    <ul>
-                        <li>Enfants / Parents : 100 000 €</li>
-                        <li>Frères / Sœurs : 15 932 € (Exonération totale si cohabitation > 5 ans, >50 ans ou infirme)</li>
-                        <li>Neveux / Nièces : 7 967 €</li>
-                        <li>Tiers / Concubins : 1 594 €</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>1. Qui est tenu de régler les droits ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Chaque héritier est tenu de régler les droits de successions en fonction de la part nette qu'il reçoit. Attention à la solidarité fiscale : Tous les héritiers sont tenus solidairement de la totalité des droits de successions.</p>
+            </div></div>
 
-            <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Les Barèmes de Taxation</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>Après abattement, le solde est taxé :</p>
-                    
-                    <strong>En Ligne Directe (Parents/Enfants) :</strong>
-                    <table>
-                        <tr><th>Part nette taxable</th><th>Taux</th></tr>
-                        <tr><td>Jusqu'à 8 072 €</td><td>5 %</td></tr>
-                        <tr><td>De 8 072 € à 12 109 €</td><td>10 %</td></tr>
-                        <tr><td>De 12 109 € à 15 932 €</td><td>15 %</td></tr>
-                        <tr><td>De 15 932 € à 552 324 €</td><td>20 %</td></tr>
-                        <tr><td>De 552 324 € à 902 838 €</td><td>30 %</td></tr>
-                        <tr><td>De 902 838 € à 1 805 677 €</td><td>40 %</td></tr>
-                        <tr><td>Au-delà</td><td>45 %</td></tr>
-                    </table>
+            <div class="capsule"><div class="capsule-header"><h4>2. La déclaration de succession</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>Elle est obligatoire, et doit être souscrite dans les 6 mois du décès. Exonération si l'actif brut est inférieur à 1 500 EUR (ligne directe/époux) ou 3 000 EUR (autres).</p>
+            </div></div>
 
-                    <strong>Autres Héritiers :</strong>
-                    <ul>
-                        <li>Frères et Sœurs : 35% (< 24 430 €) puis 45%.</li>
-                        <li>Parents jusqu'au 4e degré : 55%.</li>
-                        <li>Tiers et parents éloignés (Concubins) : 60%.</li>
-                    </ul>
-                </div>
-            </div>
-            
-             <div class="capsule">
-                <div class="capsule-header">
-                    <h4>Évaluation & Paiement</h4>
-                    <span class="capsule-icon">+</span>
-                </div>
-                <div class="capsule-content">
-                    <p>La déclaration est obligatoire dans les 6 mois. Il y a solidarité fiscale entre les héritiers.</p>
-                    <p><strong>Évaluation :</strong> Valeur vénale au jour du décès. Abattement de 20% sur la résidence principale si occupée par le conjoint ou les enfants. Attention aux sous-estimations (redressements).</p>
-                </div>
-            </div>
+            <div class="capsule"><div class="capsule-header"><h4>3. Quel est le montant des droits ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p>A compter du 22 août 2007 (loi TEPA), les droits de successions sont supprimés pour le conjoint survivant et le partenaire PACSé.</p>
+                <p><strong>Méthode de calcul :</strong> 1. Part nette. 2. Déduire l'abattement. 3. Appliquer le barème. 4. Réductions éventuelles.</p>
+                
+                <p><strong>Abattement et barème entre descendants et ascendants (Ligne Directe) :</strong></p>
+                <p>Abattement : 100 000 EUR par enfant / parent (renouvelable tous les 15 ans).</p>
+                <table>
+                    <tr><th>Part nette taxable</th><th>Taux</th></tr>
+                    <tr><td>Moins de 8 072 €</td><td>5 %</td></tr>
+                    <tr><td>De 8 072 à 12 109 €</td><td>10 %</td></tr>
+                    <tr><td>De 12 109 à 15 932 €</td><td>15 %</td></tr>
+                    <tr><td>De 15 932 à 552 324 €</td><td>20 %</td></tr>
+                    <tr><td>De 552 324 à 902 838 €</td><td>30 %</td></tr>
+                    <tr><td>De 902 838 à 1 805 677 €</td><td>40 %</td></tr>
+                    <tr><td>Plus de 1 805 677 €</td><td>45 %</td></tr>
+                </table>
+
+                <p><strong>Entre Conjoints et PACSés (Donations) :</strong></p>
+                <p>Abattement : 80 724 EUR. Barème identique à la ligne directe.</p>
+
+                <p><strong>Entre Frères et Soeurs :</strong></p>
+                <p>Exonération totale si : célibataire/veuf/divorcé + de 50 ans ou infirme + domicile constant avec le défunt depuis 5 ans. Sinon, abattement de 15 932 EUR.</p>
+                <table>
+                    <tr><th>Part nette taxable</th><th>Taux</th></tr>
+                    <tr><td>Moins de 24 430 €</td><td>35 %</td></tr>
+                    <tr><td>Plus de 24 430 €</td><td>45 %</td></tr>
+                </table>
+
+                <p><strong>Entre parents jusqu'au 4e degré (Oncles, tantes, neveux...) :</strong></p>
+                <p>Abattement : 7 967 EUR. Taux unique : 55 %.</p>
+
+                <p><strong>Entre tiers et parents au-delà du 4e degré (Concubins...) :</strong></p>
+                <p>Abattement : 1 594 EUR. Taux unique : 60 %.</p>
+
+                <p><strong>Autres abattements :</strong> Handicapés (159 325 EUR cumulable). Dons familiaux de sommes d'argent (31 865 EUR exonérés).</p>
+                <p><strong>Réductions :</strong> Pour charges de famille (supprimée en 2017) et pour mutilés de guerre.</p>
+            </div></div>
+
+            <div class="capsule"><div class="capsule-header"><h4>4. Comment évaluer les biens recueillis ?</h4><span class="capsule-icon">+</span></div><div class="capsule-content">
+                <p><strong>4.1. L'ACTIF :</strong> Les immeubles à leur valeur vénale (abattement de 20% sur la résidence principale si occupée). Les meubles : soit vente, soit inventaire, soit forfait de 5%. Valeurs mobilières : cours de la bourse.</p>
+                <p><strong>Barème usufruit :</strong> Dépend de l'âge de l'usufruitier (ex: moins de 21 ans = 90% usufruit / 10% nue-propriété; 51 à 61 ans = 50% / 50%; plus de 91 ans = 10% / 90%).</p>
+                <p><strong>4.2. LE PASSIF :</strong> Déductible si la dette est certaine au jour du décès (frais funéraires limités à 1500€, impôts, emprunts non couverts par assurance). Dettes envers les héritiers présumées fictives sauf preuve contraire.</p>
+            </div></div>
         </div>
+
+    </div>
+
+    <div id="medias" class="section-block container">
+        <div class="section-title"><h2>V</h2><h3>Publications & Interviews</h3></div>
         
-        <div id="publications" class="section-block">
-            <div class="section-title">
-                <h2>V</h2>
-                <h3>Publications & Interviews</h3>
+        <div class="media-grid">
+            <div class="media-col">
+                <h4 style="margin-bottom:1.5rem; color:var(--dark-slate);">Dernière Vidéo</h4>
+                <div class="video-box">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/placeholder" frameborder="0" allowfullscreen style="background:#000;"></iframe>
+                </div>
+                <p style="margin-top:1rem; font-size:0.9rem;">Intervention sur BFM Business : Les pièges de l'indivision.</p>
             </div>
             
-            <div class="media-grid">
-                <div class="media-column">
-                    <h5 style="margin-bottom: 1.5rem; color: var(--dark-slate);">Dernière Intervention Vidéo</h5>
-                    <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/placeholder" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div class="media-column">
-                    <h5 style="margin-bottom: 1.5rem; color: var(--dark-slate);">Articles & Publications</h5>
-                    <ul class="article-list">
-                        <li class="article-item">
-                            <a href="#" class="article-link">
-                                <div class="article-meta">Interview | Presse Juridique</div>
-                                <div class="article-title">Les pièges de la donation-partage</div>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="#" class="article-link">
-                                <div class="article-meta">Publication | Blog du Cabinet</div>
-                                <div class="article-title">Protéger son conjoint : les nouvelles dispositions</div>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="#" class="article-link">
-                                <div class="article-meta">Article | Revue Droit & Patrimoine</div>
-                                <div class="article-title">Fiscalité de l'assurance-vie : ce qui change en 2025</div>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="#" class="article-link">
-                                <div class="article-meta">Conférence</div>
-                                <div class="article-title">L'anticipation successorale du chef d'entreprise</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="media-col">
+                <h4 style="margin-bottom:1.5rem; color:var(--dark-slate);">Articles Récents</h4>
+                <ul class="article-list">
+                    <li class="article-item"><a href="#">La fiscalité de l'assurance-vie en 2025</a></li>
+                    <li class="article-item"><a href="#">Comment protéger son concubin sans se pacser ?</a></li>
+                    <li class="article-item"><a href="#">Donation-partage : les erreurs à éviter</a></li>
+                    <li class="article-item"><a href="#">Réforme des successions : ce qui change</a></li>
+                </ul>
             </div>
         </div>
-
     </div>
 
     <footer>
@@ -644,29 +490,26 @@
             <h3 style="color:var(--royal-red); margin-top:0;">Maître Magali GIBERT</h3>
             <p><strong>Avocat à la Cour</strong></p>
             <p>60-62 avenue Henri-Martin, 75116 Paris</p>
-            <p>Tél. 01 40 20 [Voir PDF] | gibertm@gmail.com</p>
+            <p>Tél. 01 40 20 [Voir PDF pour numéro complet] | gibertm@gmail.com</p>
         </div>
 
         <div class="disclaimer">
-            <h4 style="color: #999;">AVERTISSEMENT / NON-RESPONSABILITÉ</h4>
-            <p>Les documents présentés sont destinés à votre information et ne constituent pas une consultation juridique. L'auteur s'efforce de présenter le droit des successions de manière simplifiée. Les consultations gratuites sont interdites par le Barreau si elles ne sont pas anonymes. Pour une étude adaptée, veuillez recourir à une consultation en cabinet.</p>
+            <h4 style="color: #bbb;">Avertissement avant d'écrire à l'auteur • Non-responsabilité</h4>
+            <p>Les documents, qui vous sont présentés ici sont destinés à votre information. De même les précisions fournies par correspondance ne constituent pas une consultation juridique, et ne sauraient en aucun cas engager la responsabilité de leurs auteurs, ni du Barreau, ni de l'association, ni de l'hébergeur, ni d'aucun de nos providers. L'auteur s'efforce de présenter le droit des successions complexe de manière simplifié et intuitif. N'hésitez pas à faire part de vos remarques et suggestions. Si certains points restent obscurs, vous pouvez demander à l'auteur de vous apporter des précisions.</p>
+            <p>Les consultations gratuites sont interdites par le Barreau, si elles ne sont pas anonymes. Si vous souhaitez une étude réellement adaptée à vos besoins et couverte par une garantie professionnelle, nous vous invitons à recourir à une consultation juridique classique en cabinet.</p>
         </div>
         
-        <div class="footer-legal">
-            <p>© 1999-2019 - Magali GIBERT - Association Droit pour Tous - Tous droits réservés.</p>
-            <p>Reproduction interdite sans consentement.</p>
-            <p><a href="#intro" style="color:var(--royal-red); text-decoration:none;">Retour Haut de Page</a></p>
+        <div style="font-size:0.8rem; margin-top:2rem;">
+            <p>© 1999-2019 - Magali GIBERT - association Droit pour Tous - Tous droits réservés. Reproduction interdite sans le consentement de l'auteur et de l'association. SOS-NET base de données juridique. Droit des successions par M. Gibert Avocat.</p>
+            <p><a href="#intro" style="color:var(--royal-red); text-decoration:none;">retour page d'accueil</a></p>
         </div>
     </footer>
 
     <script>
-        // Gestion des capsules (Accordéon)
         const capsules = document.querySelectorAll('.capsule');
-
         capsules.forEach(capsule => {
             const header = capsule.querySelector('.capsule-header');
             header.addEventListener('click', () => {
-                // Toggle la capsule actuelle
                 capsule.classList.toggle('active');
                 const content = capsule.querySelector('.capsule-content');
                 if (capsule.classList.contains('active')) {
